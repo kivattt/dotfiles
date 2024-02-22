@@ -21,8 +21,8 @@ imap <C-d> <Esc>Vyp$i
 imap <C-x> <Esc>Vda
 imap <C-o> <Esc>:edit 
 
-map <Tab>   gt
-map <S-Tab> gT
+map <C-Tab>   gt
+map <C-S-Tab> gT
 map <C-q> :wq!<CR>
 map <C-d> Vyp$
 map <C-x> Vda
