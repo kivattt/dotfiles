@@ -1,0 +1,6 @@
+xterm*selectToClipboard: true
+xterm*font:              *-fixed-*-*-*-10-*
+xterm*background:black
+xterm*foreground:white
+
+Xcursor.size: 16

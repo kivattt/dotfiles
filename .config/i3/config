@@ -1,0 +1,158 @@
+font pango:monospace 7
+
+set $up l
+set $down k
+set $left j
+set $right semicolon
+
+# split in horizontal orientation
+bindsym Mod1+h split h
+
+# split in vertical orientation
+bindsym Mod1+v split v
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym Mod1+s layout stacking
+#bindsym Mod1+w layout tabbed
+#bindsym Mod1+e layout toggle split
+
+# change focus between tiling / floating windows
+bindsym Mod1+space focus mode_toggle
+
+# exit i3 (logs you out of your X session)
+bindsym Mod1+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Y' 'i3-msg exit'"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+		position bottom
+        status_command i3status
+#		tray_output primary
+}
+
+# Set wallpaper
+exec_always feh --bg-fill ~/main/wallpapers/pape2.png ~/main/wallpapers/pape1.png.png
+
+# Set caps-lock to be same as esc key
+exec_always xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+
+# Set keyboard repeat delay rate to faster
+exec_always xset r rate 300 40
+
+# Set mod keys
+set $sup Mod4
+
+# Volume keys
+#bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +5%
+#bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -5%
+#bindsym XF86AudioMute exec pactl -- set-sink-volume 0 0%
+
+# Screen brightness controls
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 15 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 15 # decrease screen brightness
+
+bindsym $sup+d exec dmenu_run -p M -nb "#040426"
+
+bindsym $sup+t exec xterm
+bindsym $sup+g exec firefox
+bindsym $sup+f fullscreen toggle
+bindsym $sup+q kill
+
+# Sketchy pasting hack for keyboards without an Insert key
+bindsym $sup+i exec sleep 0.25 && xdotool keydown Shift && xdotool keydown Insert && sleep 0.2 && xdotool keyup Insert && xdotool keyup Shift
+
+bindsym $sup+Shift+e exec i3-sensible-terminal
+
+
+# arandr main.sh file to set up monitor outputs
+exec_always ~/.screenlayout/main.sh
+
+# Move focused window
+bindsym $sup+Left move left
+bindsym $sup+Down move down
+bindsym $sup+Up move up
+bindsym $sup+Right move right
+
+# Change focus
+#bindsym Mod1+$up focus up
+bindsym Mod1+$left focus left
+#bindsym Mod1+$down focus down
+bindsym Mod1+$right focus right
+
+# Arrow keys to change focus
+bindsym Mod1+Left focus left
+bindsym Mod1+Down focus down
+bindsym Mod1+Up focus up
+bindsym Mod1+Right focus right
+
+# Use Mouse+$sup to drag floating windows to their wanted position
+floating_modifier $sup
+
+# Move the currently focused window to the scratchpad
+bindsym $sup+s move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $sup+Shift+s scratchpad show
+
+# Toggle tiling / floating
+bindsym --whole-window $sup+w floating toggle
+
+# 4 px borders
+new_window pixel 10
+for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border normal
+# Color                 border  backgr. text    indica. child_border
+client.focused          #040426 #000000 #ffffff #040426 #040426
+client.focused_inactive #083363 #000000 #ffffff #083363 #083363
+client.unfocused        #083363 #000000 #ffffff #083363 #083363
+client.urgent           #083363 #000000 #ffffff #083363 #083363
+client.placeholder      #040426 #000000 #ffffff #040426 #040426
+
+#gaps inner 15
+#gaps outer 15
+
+# Bind keys to change gap sizes
+#bindsym $sup+Shift+Up    gaps inner current plus  5
+#bindsym $sup+Shift+Down  gaps inner current minus 5
+#bindsym $sup+Shift+Left  gaps outer current minus 5
+#bindsym $sup+Shift+Right gaps outer current plus  5
+
+# Resizing of windows
+bindsym $sup+Ctrl+Right resize shrink width 15 px or 1 ppt
+bindsym $sup+Ctrl+Up    resize grow height 15 px or 1 ppt
+bindsym $sup+Ctrl+Down  resize shrink height 15 px or 1 ppt
+bindsym $sup+Ctrl+Left  resize grow width 15 px or 1 ppt
+
+# Switch to workspace
+bindsym $sup+1 workspace 1
+bindsym $sup+2 workspace 2
+bindsym $sup+3 workspace 3
+bindsym $sup+4 workspace 4
+bindsym $sup+5 workspace 5
+bindsym $sup+6 workspace 6
+bindsym $sup+7 workspace 7
+bindsym $sup+8 workspace 8
+bindsym $sup+9 workspace 9
+bindsym $sup+0 workspace 10
+
+# Move window to workspace
+bindsym $sup+Shift+1 move container to workspace 1
+bindsym $sup+Shift+2 move container to workspace 2
+bindsym $sup+Shift+3 move container to workspace 3
+bindsym $sup+Shift+4 move container to workspace 4
+bindsym $sup+Shift+5 move container to workspace 5
+bindsym $sup+Shift+6 move container to workspace 6
+bindsym $sup+Shift+7 move container to workspace 7
+bindsym $sup+Shift+8 move container to workspace 8
+bindsym $sup+Shift+9 move container to workspace 9
+bindsym $sup+Shift+0 move container to workspace 10
+
+# Lock screen
+bindsym $sup+l exec i3lock -c 000000
+
+# Map wacom tablet to main monitor
+#exec_always xsetwacom set "Wacom Bamboo One S Pen stylus" maptooutput eDP-1
+#exec_always xsetwacom set "Wacom Bamboo One S Pen stylus" maptooutput HDMI-1
+exec_always xsetwacom set "Wacom Cintiq 16 Pen stylus" maptooutput HDMI-1
+
