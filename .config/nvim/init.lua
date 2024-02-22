@@ -29,7 +29,13 @@ map("n", "<C-d>", "Vyp$")
 map("n", "<C-x>", "Vd")
 map("n", "<C-t>", ":tabnew ")
 
--- Plugins
+map("n", "<C-Up>", vim.diagnostic.goto_next)
+map("n", "<C-j>", vim.diagnostic.goto_next)
+
+map("n", "<C-Down>", vim.diagnostic.goto_prev)
+map("n", "<C-k>", vim.diagnostic.goto_prev)
+
+-- Plugins (vim-plug)
 local Plug = vim.fn["plug#"]
 vim.call("plug#begin")
 

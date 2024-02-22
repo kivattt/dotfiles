@@ -26,6 +26,7 @@ cd ~/main
 #---------#
 alias q=exit
 
+alias vim="$EDITOR"
 alias v="$EDITOR"
 alias b="$EDITOR ~/.bashrc"
 alias vr="$EDITOR ~/.config/nvim/init.lua"
