@@ -58,8 +58,3 @@ alias idea="~/Downloads/intellij/idea-IC-232.9921.47/bin/idea.sh"
 # PATH #
 #------#
 export PATH=$PATH:~/Downloads/nvim-linux64/bin
-
-alias prs="ssh opc@129.146.190.97"
-alias vifl="ssh server@109.198.23.126 -i ~/main/fuck"
-alias k="ssh kivas@80.213.159.56 -p 80"
-alias idea="~/Downloads/intellij/idea-IC-232.9921.47/bin/idea.sh"
