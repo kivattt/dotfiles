@@ -28,7 +28,7 @@ alias q=exit
 
 alias v="$EDITOR"
 alias b="$EDITOR ~/.bashrc"
-alias vr="$EDITOR ~/.vimrc"
+alias vr="$EDITOR ~/.config/nvim/init.lua"
 
 alias p=cat
 alias lowercase="tr [:upper:] [:lower:]"

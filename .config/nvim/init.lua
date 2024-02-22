@@ -1,4 +1,5 @@
-vim.cmd "colorscheme desert"
+vim.cmd "set termguicolors"
+vim.cmd "colorscheme industry"
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -22,8 +23,8 @@ map("n", "<C-d>", "Vyp$")
 map("n", "<C-x>", "Vd")
 map("n", "<C-t>", ":tabnew ")
 
+-- Plugins
 local Plug = vim.fn["plug#"]
-
 vim.call("plug#begin")
 
 -- LSP Support
