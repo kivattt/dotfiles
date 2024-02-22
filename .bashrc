@@ -1,5 +1,6 @@
 export PS1="$USER\n$ "
 export EDITOR=nvim
+export TERM=screen-256color
 
 # Make Ctrl+s not freeze the terminal
 [[ $- == *i* ]] && stty -ixon
