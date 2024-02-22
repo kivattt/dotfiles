@@ -6,8 +6,6 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.ic = true
 
-vim.lsp.set_log_level("debug")
-
 local map = vim.keymap.set
 
 -- Insert mode maps
