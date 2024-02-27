@@ -1,4 +1,4 @@
-vim.cmd "set termguicolors"
+--vim.cmd "colorscheme desert"
 vim.cmd "colorscheme industry"
 
 vim.opt.tabstop = 4
@@ -6,6 +6,10 @@ vim.opt.shiftwidth = 4
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.ic = true
+vim.opt.termguicolors = true
+
+vim.opt.title = true
+vim.cmd "set titlestring=%Y\\ %t%(\\ %M%)%(\\ (%{expand(\\\"%:~:.:h\\\")})%)%(\\ %a%)"
 
 local map = vim.keymap.set
 
@@ -35,6 +39,8 @@ map("n", "<C-j>", vim.diagnostic.goto_next)
 map("n", "<C-Down>", vim.diagnostic.goto_prev)
 map("n", "<C-k>", vim.diagnostic.goto_prev)
 
+map("n", "?", vim.lsp.buf.hover)
+
 -- Plugins (vim-plug)
 local Plug = vim.fn["plug#"]
 vim.call("plug#begin")
@@ -61,5 +67,18 @@ lsp_zero.on_attach(function(client, bufnr)
 		lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
-require("lspconfig").gopls.setup({})
 require("mason").setup()
+
+local lspconfig = require("lspconfig")
+
+lspconfig.gopls.setup({})
+lspconfig.clangd.setup({})
+lspconfig.ocamllsp.setup({})
+
+-- Tab for autocomplete key map
+local cmp = require("cmp")
+cmp.setup({
+	mapping = {
+		["<Tab>"] = cmp.mapping.confirm({select = true}),
+	}
+})
