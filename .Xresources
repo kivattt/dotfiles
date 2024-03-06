@@ -1,6 +1,24 @@
-xterm*selectToClipboard: true
-xterm*font:              *-fixed-*-*-*-10-*
-xterm*background:black
-xterm*foreground:white
+!xterm*selectToClipboard: true
+!xterm*font:              *-fixed-*-*-*-10-*
+!xterm*background:black
+!xterm*foreground:white
+
+XTerm.vt100.selectToClipboard: true
+XTerm.vt100.background: black
+XTerm.vt100.foreground: white
+
+XTerm.vt100.saveLines: 4096
+
+!XTerm.vt100.
+!XTerm.vt100.faceName: Liberation Mono:size=10:antialias=true
+!XTerm.vt100.faceName: JetBrains Mono:style=Bold:size=13:antialias=true
+XTerm.vt100.faceName: JetBrains Mono:style=Bold:size=9:antialias=true
+!XTerm.vt100.faceName: JetBrains Mono:size=10
+!XTerm.vt100.scaleHeight: 1.5
+!XTerm.vt100.font: 7x13
+XTerm.vt100.renderFont: true
 
 Xcursor.size: 16
+
+!*dpi: 125
+!Xft.dpi: 125
