@@ -10,4 +10,5 @@ wget https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip
 unzip JetBrainsMono-2.304.zip
 mv fonts/ttf fonts/JetBrainsMono
 sudo cp -r fonts/JetBrainsMono /usr/share/fonts/truetype
+rm -rf ~/Downloads/JetBrainsMono
 ```

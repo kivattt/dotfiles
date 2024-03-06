@@ -45,17 +45,8 @@ alias cl="clear"
 alias cll="cd .."
 alias r="ranger"
 
-#alias fix='echo -e "\033c" ; stty sane; setterm -reset; reset; tput reset; clear'
-#alias displayfix="export DISPLAY=:0"
-
 #------------------------#
 # Cursed program aliases #
 #------------------------#
-alias krita="~/Downloads/krita-5.1.5-x86_64.appimage"
+alias krita="~/Downloads/krita-5.2.2-x86_64.appimage"
 alias idea="~/Downloads/intellij/idea-IC-232.9921.47/bin/idea.sh"
-#alias medibang="wine64 ~/.wine/dosdevices/c:/\"Program Files\"/Medibang/\"MediBang Paint Pro\"/MediBangPaintPro.exe"
-
-#------#
-# PATH #
-#------#
-export PATH=$PATH:~/Downloads/nvim-linux64/bin

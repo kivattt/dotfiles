@@ -1,5 +1,7 @@
 font pango:monospace 7
 
+exec_always picom -b
+
 set $up l
 set $down k
 set $left j
@@ -31,7 +33,7 @@ bar {
 }
 
 # Set wallpaper
-exec_always feh --bg-fill ~/main/wallpapers/pape2.png ~/main/wallpapers/pape1.png.png
+exec_always feh --bg-fill ~/main/wallpapers/middle.png ~/main/wallpapers/left.png ~/main/wallpapers/right.jpg
 
 # Set caps-lock to be same as esc key
 exec_always xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
@@ -109,8 +111,8 @@ client.unfocused        #083363 #000000 #ffffff #083363 #083363
 client.urgent           #083363 #000000 #ffffff #083363 #083363
 client.placeholder      #040426 #000000 #ffffff #040426 #040426
 
-#gaps inner 15
-#gaps outer 15
+gaps inner 15
+#gaps outer 10
 
 # Bind keys to change gap sizes
 #bindsym $sup+Shift+Up    gaps inner current plus  5
@@ -119,10 +121,10 @@ client.placeholder      #040426 #000000 #ffffff #040426 #040426
 #bindsym $sup+Shift+Right gaps outer current plus  5
 
 # Resizing of windows
-bindsym $sup+Ctrl+Right resize shrink width 15 px or 1 ppt
-bindsym $sup+Ctrl+Up    resize grow height 15 px or 1 ppt
-bindsym $sup+Ctrl+Down  resize shrink height 15 px or 1 ppt
-bindsym $sup+Ctrl+Left  resize grow width 15 px or 1 ppt
+bindsym $sup+Ctrl+Right resize shrink width 25 px or 1 ppt
+bindsym $sup+Ctrl+Up    resize grow height 25 px or 1 ppt
+bindsym $sup+Ctrl+Down  resize shrink height 25 px or 1 ppt
+bindsym $sup+Ctrl+Left  resize grow width 25 px or 1 ppt
 
 # Switch to workspace
 bindsym $sup+1 workspace 1

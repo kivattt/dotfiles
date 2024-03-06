@@ -4,8 +4,8 @@ git diff .vimrc ~/.vimrc
 git diff .Xresources ~/.Xresources
 
 git diff .config/i3/config ~/.config/i3/config
-
 git diff .config/nvim/init.lua ~/.config/nvim/init.lua
+git diff .config/picom/picom.conf ~/.config/picom/picom.conf
 
 # .kiva files
 git diff .config/nvim/syntax/kiva.vim ~/.config/nvim/syntax/kiva.vim
