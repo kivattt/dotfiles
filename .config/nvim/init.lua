@@ -79,7 +79,7 @@ map("n", "<C-k>", vim.diagnostic.goto_prev)
 
 map("n", "?", vim.lsp.buf.hover)
 
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 --[[
 	PLUGIN stuff
