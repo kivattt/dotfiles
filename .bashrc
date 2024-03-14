@@ -1,6 +1,8 @@
 export PS1="$USER\n$ "
 export EDITOR=nvim
 
+stty erase \^H
+
 # Make Ctrl+s not freeze the terminal
 [[ $- == *i* ]] && stty -ixon
 
@@ -44,9 +46,12 @@ alias csl="clear; ls -A1 --color"
 alias cl="clear"
 alias cll="cd .."
 alias r="ranger"
+alias gs="git status"
 
 #------------------------#
 # Cursed program aliases #
 #------------------------#
 alias krita="~/Downloads/krita-5.2.2-x86_64.appimage"
-alias idea="~/Downloads/intellij/idea-IC-232.9921.47/bin/idea.sh"
+alias idea="~/Downloads/idea-IC-233.14475.28/bin/idea.sh"
+alias audacity="~/Downloads/audacity-linux-3.4.2-x64.AppImage"
+alias re="~/Downloads/MultiMC/MultiMC"
