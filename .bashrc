@@ -1,6 +1,10 @@
 export PS1="$USER\n$ "
 export EDITOR=nvim
 
+if [[ "$TERM" == "xterm" ]]; then
+	export TERM="xterm-256color"
+fi
+
 stty erase \^H
 
 # Make Ctrl+s not freeze the terminal
@@ -54,4 +58,7 @@ alias gs="git status"
 alias krita="~/Downloads/krita-5.2.2-x86_64.appimage"
 alias idea="~/Downloads/idea-IC-233.14475.28/bin/idea.sh"
 alias audacity="~/Downloads/audacity-linux-3.4.2-x64.AppImage"
+alias discord="~/Downloads/discord/Discord/Discord"
 alias re="~/Downloads/MultiMC/MultiMC"
+alias fen="/home/kivae/main/fen/fen"
+
