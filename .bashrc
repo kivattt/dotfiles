@@ -1,4 +1,7 @@
-export PS1="$USER\n$ "
+git_branch() {
+	git branch --show-current 2> /dev/null
+}
+export PS1="\033[0;32m\u \033[0m\w \033[0;35m\$(git_branch)\n\033[0;31m$\033[0m "
 export EDITOR=nvim
 
 if [[ "$TERM" == "xterm" ]]; then
@@ -61,4 +64,3 @@ alias audacity="~/Downloads/audacity-linux-3.4.2-x64.AppImage"
 alias discord="~/Downloads/discord/Discord/Discord"
 alias re="~/Downloads/MultiMC/MultiMC"
 alias fen="/home/kivae/main/fen/fen"
-
