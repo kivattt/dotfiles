@@ -9,6 +9,7 @@ XTerm.termName: xterm-256color
 XTerm.vt100.selectToClipboard: true
 XTerm.vt100.saveLines: 4096
 
+! Don't know if this makes a difference, but it should enable UTF-8 if it wasn't already I suppose
 XTerm.vt100.locale: false
 XTerm.vt100.utf8: true
 
@@ -16,6 +17,9 @@ XTerm.vt100.utf8: true
 !XTerm.vt100.background: black
 XTerm.vt100.background: #222436
 XTerm.vt100.foreground: white
+! We can set individual colors like so:
+!XTerm.vt100.color0: #000000
+!XTerm.vt100.color1: #000000
 
 ! Font
 XTerm.vt100.faceName: JetBrains Mono:style=Bold:size=9:antialias=true
