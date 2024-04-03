@@ -4,31 +4,13 @@ git_branch() {
 export PS1="\033[0;32m\u \033[0m\w \033[0;35m\$(git_branch)\n\033[0;31m$\033[0m "
 export EDITOR=nvim
 
-if [[ "$TERM" == "xterm" ]]; then
-	export TERM="xterm-256color"
-fi
-
 stty erase \^H
 
 # Make Ctrl+s not freeze the terminal
 [[ $- == *i* ]] && stty -ixon
 
-#tmux
 clear
 cd ~/main
-
-#----------------------#
-# IP Address in prompt #
-#----------------------#
-
-#IP=`curl -4s ifconfig.me`
-#if ! pidof obs > /dev/null 2> /dev/null
-#then
-#	IP=`curl -4 v4.ifconfig.co 2> /dev/null`
-#	export PS1="$USER@$IP\n$ "
-#else
-#	export PS1="$USER@censored\n$ "
-#fi
 
 #---------#
 # Aliases #

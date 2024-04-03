@@ -3,6 +3,7 @@
 !xterm*background:black
 !xterm*foreground:white
 
+XTerm.termName: xterm-256color
 XTerm.vt100.selectToClipboard: true
 XTerm.vt100.background: black
 XTerm.vt100.foreground: white
