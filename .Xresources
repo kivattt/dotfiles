@@ -15,11 +15,48 @@ XTerm.vt100.utf8: true
 
 ! Colors
 !XTerm.vt100.background: black
-XTerm.vt100.background: #222436
-XTerm.vt100.foreground: white
+!XTerm.vt100.foreground: white
+
 ! We can set individual colors like so:
 !XTerm.vt100.color0: #000000
 !XTerm.vt100.color1: #000000
+
+! special
+*.foreground:   #cad0d1
+*.background:   #101019
+*.cursorColor:  #cad0d1
+
+! black
+*.color0:       #000000
+*.color8:       #50adf2
+
+! red
+*.color1:       #742636
+*.color9:       #e03e60
+
+! green
+*.color2:       #1b710e
+*.color10:      #00ef6b
+
+! yellow
+*.color3:       #363e34
+*.color11:      #e1d14f
+
+! blue
+*.color4:       #535f50
+*.color12:      #17adcf
+
+! magenta
+*.color5:       #768772
+*.color13:      #e247c6
+
+! cyan
+*.color6:       #9fb59a
+*.color14:      #5b98f5
+
+! white
+*.color7:       #d0eacb
+*.color15:      #bc9634
 
 ! Font
 XTerm.vt100.faceName: JetBrains Mono:style=Bold:size=9:antialias=true

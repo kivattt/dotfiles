@@ -46,3 +46,26 @@ alias audacity="~/Downloads/audacity-linux-3.4.2-x64.AppImage"
 alias discord="~/Downloads/discord/Discord/Discord"
 alias re="~/Downloads/MultiMC/MultiMC"
 alias fen="/home/kivae/main/fen/fen"
+
+#-----------------------------------#
+# My coreutils replacements, tutils #
+#-----------------------------------#
+tutilspath=~/tutils/target/release
+if test -d $tutilspath; then
+	alias ls="$tutilspath/ls"
+
+	# Overriding the previous aliases
+	alias l="$tutilspath/ls"
+	alias sl="$tutilspath/ls --all"
+	alias cls="clear; $tutilspath/ls"
+	alias csl="clear; $tutilspath/ls --all"
+
+	alias pwd="$tutilspath/pwd"
+else
+	echo "Could not find tutils programs in $tutilspath"
+	echo "Try the following, then re-open a terminal;"
+	echo "cd"
+	echo "git clone https://github.com/kivattt/tutils"
+	echo "cd tutils"
+	echo "cargo build --release"
+fi

@@ -33,14 +33,13 @@ vim.call("plug#end")
 ]]--
 
 --vim.cmd "colorscheme desert"
-vim.cmd "colorscheme industry"
+--vim.cmd "colorscheme industry"
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.ic = true
-vim.opt.termguicolors = true
 
 vim.opt.title = true
 vim.cmd "set titlestring=%Y\\ %t%(\\ %M%)%(\\ (%{expand(\\\"%:~:.:h\\\")})%)%(\\ %a%)"
@@ -109,11 +108,12 @@ require("mason").setup({})
 	LSP SETUP
 ]]--
 local lspconfig = require("lspconfig")
-lspconfig.gopls.setup({})    -- Go
-lspconfig.clangd.setup({})   -- C/C++
-lspconfig.ocamllsp.setup({}) -- OCaml
-lspconfig.lua_ls.setup({})   -- Lua
-lspconfig.jdtls.setup({})    -- Java (Requires Java 17+ to be used, tldr: `sudo update-alternatives --config java`)
+lspconfig.gopls.setup({})         -- Go
+lspconfig.clangd.setup({})        -- C/C++
+lspconfig.ocamllsp.setup({})      -- OCaml
+lspconfig.lua_ls.setup({})        -- Lua
+lspconfig.jdtls.setup({})         -- Java (Requires Java 17+ to be used, tldr: `sudo update-alternatives --config java`)
+lspconfig.rust_analyzer.setup({}) -- Rust
 
 -- Tab for autocomplete key map
 local cmp = require("cmp")
