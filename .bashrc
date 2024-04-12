@@ -61,6 +61,9 @@ if test -d $tutilspath; then
 	alias csl="clear; $tutilspath/ls --all"
 
 	alias pwd="$tutilspath/pwd"
+	alias cat="$tutilspath/cat"
+	alias p="$tutilspath/cat"
+	alias hex="$tutilspath/hex"
 else
 	echo "Could not find tutils programs in $tutilspath"
 	echo "Try the following, then re-open a terminal;"
