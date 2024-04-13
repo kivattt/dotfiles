@@ -40,6 +40,7 @@ vim.opt.shiftwidth = 4
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.ic = true
+vim.cmd "set mps+=<:>"
 
 vim.opt.title = true
 vim.cmd "set titlestring=%Y\\ %t%(\\ %M%)%(\\ (%{expand(\\\"%:~:.:h\\\")})%)%(\\ %a%)"
