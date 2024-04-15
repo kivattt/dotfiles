@@ -40,6 +40,7 @@ vim.opt.shiftwidth = 4
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.ic = true
+vim.opt.scrolloff = 15
 vim.cmd "set mps+=<:>"
 
 vim.opt.title = true
