@@ -72,6 +72,3 @@ else
 	echo "cd tutils"
 	echo "cargo build --release"
 fi
-
-alias k="ssh -Y kivas@10.0.0.69 -p 80"
-alias prs="ssh opc@129.146.190.97 -i ~/Downloads/TkQ2Vg0.key"
