@@ -45,7 +45,7 @@ alias idea="~/Downloads/idea-IC-233.14475.28/bin/idea.sh"
 alias audacity="~/Downloads/audacity-linux-3.4.2-x64.AppImage"
 alias discord="~/Downloads/discord/Discord/Discord"
 alias re="~/Downloads/MultiMC/MultiMC"
-alias fen="/home/kivae/main/fen/fen"
+alias fen="~/fen/fen" # github.com/kivattt/fen
 
 #-----------------------------------#
 # My coreutils replacements, tutils #
@@ -72,3 +72,6 @@ else
 	echo "cd tutils"
 	echo "cargo build --release"
 fi
+
+alias k="ssh -Y kivas@10.0.0.69 -p 80"
+alias prs="ssh opc@129.146.190.97 -i ~/Downloads/TkQ2Vg0.key"
