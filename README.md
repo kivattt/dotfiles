@@ -12,3 +12,14 @@ mv fonts/ttf fonts/JetBrainsMono
 sudo cp -r fonts/JetBrainsMono /usr/share/fonts/truetype
 rm -rf ~/Downloads/JetBrainsMono
 ```
+
+## Home folder structure
+```
+~/dotfiles github.com/kivattt/dotfiles
+~/tutils   github.com/kivattt/tutils
+~/fen      github.com/kivattt/fen
+
+~/main              The folder the terminal will start at
+~/main/etc/torrents Pirated movies/music
+~/main/projects     Code projects, repos
+```
