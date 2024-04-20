@@ -1,7 +1,7 @@
 git_branch() {
 	git branch --show-current 2> /dev/null
 }
-export PS1="\033[0;32m\u \033[0m\w \033[0;35m\$(git_branch)\n\033[0;31m\033[0m$ "
+export PS1="\[\033[0;32m\]\u \[\033[0m\]\w \[\033[0;35m\]\$(git_branch)\n\[\033[0;31m\033[0m\]$ "
 export EDITOR=nvim
 
 stty erase \^H
@@ -64,6 +64,7 @@ if test -d $tutilspath; then
 	alias cat="$tutilspath/cat"
 	alias p="$tutilspath/cat"
 	alias hex="$tutilspath/hex"
+	alias xxd2="$tutilspath/xxd"
 else
 	echo "Could not find tutils programs in $tutilspath"
 	echo "Try the following, then re-open a terminal;"
