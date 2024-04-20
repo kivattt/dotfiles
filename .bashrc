@@ -52,19 +52,13 @@ alias fen="~/fen/fen" # github.com/kivattt/fen
 #-----------------------------------#
 tutilspath=~/tutils/target/release
 if test -d $tutilspath; then
-	alias ls="$tutilspath/ls"
+	export PATH=$tutilspath:$PATH
 
-	# Overriding the previous aliases
-	alias l="$tutilspath/ls"
-	alias sl="$tutilspath/ls --all"
-	alias cls="clear; $tutilspath/ls"
-	alias csl="clear; $tutilspath/ls --all"
-
-	alias pwd="$tutilspath/pwd"
-	alias cat="$tutilspath/cat"
-	alias p="$tutilspath/cat"
-	alias hex="$tutilspath/hex"
-	alias xxd2="$tutilspath/xxd"
+	# Overriding the previous ls aliases since tutils ls doesn't work with the same arguments
+	alias l="ls"
+	alias sl="ls --all"
+	alias cls="clear; ls"
+	alias csl="clear; ls --all"
 else
 	echo "Could not find tutils programs in $tutilspath"
 	echo "Try the following, then re-open a terminal;"
