@@ -59,7 +59,7 @@ XTerm.vt100.utf8: true
 *.color15:      #ffffff
 
 ! Font
-XTerm.vt100.faceName: JetBrains Mono:style=Bold:size=9:antialias=true
+XTerm.vt100.faceName: JetBrains Mono:size=9:antialias=true
 XTerm.vt100.renderFont: true
 
 ! X11
