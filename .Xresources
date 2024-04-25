@@ -47,7 +47,7 @@ XTerm.vt100.utf8: true
 *.color12:      #0a9df6
 
 ! magenta
-*.color5:       #78607f
+*.color5:       #783c8a
 *.color13:      #e247c6
 
 ! cyan
