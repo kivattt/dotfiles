@@ -5,6 +5,9 @@
 local Plug = vim.fn["plug#"]
 vim.call("plug#begin")
 
+-- Some utility library many Neovim lua plugins use
+Plug("nvim-lua/plenary.nvim")
+
 -- LSP Support
 Plug("neovim/nvim-lspconfig")
 -- Autocompletion
@@ -13,18 +16,15 @@ Plug("hrsh7th/cmp-nvim-lsp")
 Plug("L3MON4D3/LuaSnip")
 
 Plug("VonHeikemen/lsp-zero.nvim", {["branch"] = "v3.x"})
-
--- Mason
 Plug("williamboman/mason.nvim")
-
--- Mason-lspconfig
 Plug("williamboman/mason-lspconfig.nvim")
 
 -- Telescope
 -- XXX: Telescope live_grep requires "ripgrep" to be installed
 -- https://github.com/BurntSushi/ripgrep
-Plug("nvim-lua/plenary.nvim")
 Plug("nvim-telescope/telescope.nvim", { ["branch"] = "0.1.x" })
+
+Plug("folke/todo-comments.nvim")
 
 vim.call("plug#end")
 
@@ -34,6 +34,10 @@ vim.call("plug#end")
 
 --vim.cmd "colorscheme desert"
 --vim.cmd "colorscheme industry"
+
+-- For some reason I can't set the color specifically, but this resets the background color of popups
+vim.cmd "hi NormalFloat guibg=None"
+vim.cmd "hi Pmenu ctermbg=Gray"
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -46,11 +50,11 @@ vim.cmd "set mps+=<:>"
 vim.opt.title = true
 vim.cmd "set titlestring=%Y\\ %t%(\\ %M%)%(\\ (%{expand(\\\"%:~:.:h\\\")})%)%(\\ %a%)"
 
-local map = vim.keymap.set
-
 --[[
 	KEYMAPS
 ]]--
+
+local map = vim.keymap.set
 
 -- Insert mode maps
 map("i", "<C-Tab>", "<Esc>gti")
@@ -80,6 +84,13 @@ map("n", "<C-k>", vim.diagnostic.goto_prev)
 
 map("n", "?", vim.lsp.buf.hover)
 
+-- FIXME: I want to be able to scroll through the autocompletion with j/k or something, but none of the below work
+-- https://stackoverflow.com/a/4740069
+--vim.cmd "inoremap <expr> j ((pumvisible()) ? (\"\\<C-n>\") : (\"j\"))"
+--vim.cmd "inoremap <expr> k ((pumvisible()) ? (\"\\<C-p>\") : (\"k\"))"
+--map("i", "j", function() return vim.fn.pumvisible() == 1 and '<C-n>' or 'j' end, {silent = true, expr = true})
+--map("i", "j", function() return vim.fn.pumvisible() == 1 and '<C-p>' or 'j' end, {silent = true, expr = true})
+
 vim.g.mapleader = " "
 
 --[[
@@ -103,6 +114,8 @@ local lsp_zero = require("lsp-zero")
 lsp_zero.on_attach(function(client, bufnr)
 		lsp_zero.default_keymaps({buffer = bufnr})
 end)
+
+require("todo-comments").setup()
 
 require("mason").setup({})
 
