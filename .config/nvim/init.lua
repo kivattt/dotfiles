@@ -84,13 +84,6 @@ map("n", "<C-k>", vim.diagnostic.goto_prev)
 
 map("n", "?", vim.lsp.buf.hover)
 
--- FIXME: I want to be able to scroll through the autocompletion with j/k or something, but none of the below work
--- https://stackoverflow.com/a/4740069
---vim.cmd "inoremap <expr> j ((pumvisible()) ? (\"\\<C-n>\") : (\"j\"))"
---vim.cmd "inoremap <expr> k ((pumvisible()) ? (\"\\<C-p>\") : (\"k\"))"
---map("i", "j", function() return vim.fn.pumvisible() == 1 and '<C-n>' or 'j' end, {silent = true, expr = true})
---map("i", "j", function() return vim.fn.pumvisible() == 1 and '<C-p>' or 'j' end, {silent = true, expr = true})
-
 vim.g.mapleader = " "
 
 --[[
@@ -131,9 +124,28 @@ lspconfig.jdtls.setup({})         -- Java (Requires Java 17+ to be used, tldr: `
 lspconfig.rust_analyzer.setup({}) -- Rust
 
 -- Tab for autocomplete key map
+local luasnip = require("luasnip")
 local cmp = require("cmp")
 cmp.setup({
 	mapping = {
 		["<Tab>"] = cmp.mapping.confirm({select = true}),
+		["<Down>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
+			else
+				fallback()
+			end
+		end, {"i", "s"}),
+		["<Up>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			elseif luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			else
+				fallback()
+			end
+		end, {"i", "s"}),
 	}
 })
