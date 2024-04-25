@@ -37,15 +37,22 @@ alias cll="cd .."
 alias r="ranger"
 alias gs="git status"
 
-#------------------------#
-# Cursed program aliases #
-#------------------------#
-alias krita="~/Downloads/krita-5.2.2-x86_64.appimage"
-alias idea="~/Downloads/idea-IC-233.14475.28/bin/idea.sh"
-alias audacity="~/Downloads/audacity-linux-3.4.2-x64.AppImage"
-alias discord="~/Downloads/discord/Discord/Discord"
-alias re="~/Downloads/MultiMC/MultiMC"
-alias fen="~/fen/fen" # github.com/kivattt/fen
+#-----------------------------------#
+# My terminal file manager, fen     #
+#-----------------------------------#
+fenpath=~/fen
+if test -d $fenpath; then
+	# Overriding the previous 'r' alias
+	alias r="$fenpath/fen"
+	alias fen="$fenpath/fen"
+else
+	echo "Could not find fen in $fenpath"
+	echo "Try the following, then re-open a terminal;"
+	echo "cd"
+	echo "git clone https://github.com/kivattt/fen"
+	echo "cd fen"
+	echo "go build"
+fi
 
 #-----------------------------------#
 # My coreutils replacements, tutils #
@@ -81,3 +88,12 @@ else
 	echo "cd tutils"
 	echo "cargo build --release"
 fi
+
+#------------------------#
+# Cursed program aliases #
+#------------------------#
+alias krita="~/Downloads/krita-5.2.2-x86_64.appimage"
+alias idea="~/Downloads/idea-IC-233.14475.28/bin/idea.sh"
+alias audacity="~/Downloads/audacity-linux-3.4.2-x64.AppImage"
+alias discord="~/Downloads/discord/Discord/Discord"
+alias re="~/Downloads/MultiMC/MultiMC"
