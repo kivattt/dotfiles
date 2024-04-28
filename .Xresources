@@ -23,7 +23,7 @@ XTerm.vt100.utf8: true
 
 ! special
 *.foreground:   #cad0d1
-*.background:   #101019
+*.background:   #101018
 *.cursorColor:  #cad0d1
 
 ! black
