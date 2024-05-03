@@ -25,10 +25,15 @@ alias vr="$EDITOR ~/.config/nvim/init.lua"
 alias p=cat
 alias lowercase="tr [:upper:] [:lower:]"
 alias uppercase="tr [:lower:] [:upper:]"
-alias unique="sort -u"
+
+if type uniq > /dev/null 2> /dev/null; then
+	printf "" # No-op
+else
+	alias uniq="sort -u"
+fi
+
 alias makewords="\\grep -o -E '\w+'"
 alias s="xset dpms force off"
-
 alias l="ls -1 --color"
 alias sl="ls -A1 --color"
 alias cls="clear; ls -1 --color"
@@ -37,6 +42,8 @@ alias cl="clear"
 alias cll="cd .."
 alias r="ranger"
 alias gs="git status"
+alias gd="git diff"
+alias gds="git diff --staged"
 
 #-----------------------------------#
 # My terminal file manager, fen     #
