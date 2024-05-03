@@ -24,6 +24,7 @@ alias vr="$EDITOR ~/.config/nvim/init.lua"
 
 alias p=cat
 alias lowercase="tr [:upper:] [:lower:]"
+alias uppercase="tr [:lower:] [:upper:]"
 alias unique="sort -u"
 alias makewords="\\grep -o -E '\w+'"
 alias s="xset dpms force off"
