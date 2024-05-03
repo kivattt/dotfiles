@@ -77,6 +77,7 @@ if test -d $tutilspath; then
 	alias p="$tutilspath/cat"
 	alias hex="$tutilspath/hex"
 	alias xxd="$tutilspath/xxd"
+	alias ascii="$tutilspath/ascii"
 
 	# Overriding the previous ls aliases since tutils ls doesn't work with the same arguments
 	alias l="$tutilspath/ls"
