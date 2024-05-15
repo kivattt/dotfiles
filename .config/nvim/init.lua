@@ -90,10 +90,8 @@ vim.g.mapleader = " "
 	PLUGIN stuff
 ]]--
 local builtin = require("telescope.builtin")
-map("n", "<leader>f", builtin.find_files, {})
-map("n", "<leader>g", builtin.live_grep, {})
-map("n", "<leader>b", builtin.buffers, {})
-map("n", "<leader>h", builtin.help_tags, {})
+map("n", "<C-S-n>", builtin.find_files, {})
+map("n", "<C-S-f>", builtin.live_grep, {})
 
 require("telescope").setup({
 	defaults = {
