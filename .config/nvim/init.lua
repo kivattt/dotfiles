@@ -1,5 +1,6 @@
 --[[
 	PLUGINS (vim-plug)
+	Installing vim-plug: https://github.com/junegunn/vim-plug?tab=readme-ov-file#unix-linux
 ]]--
 
 local Plug = vim.fn["plug#"]
