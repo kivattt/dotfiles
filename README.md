@@ -20,6 +20,7 @@ rm -rf ~/Downloads/JetBrainsMono
 ~/fen      github.com/kivattt/fen
 
 ~/main              The folder the terminal will start at
+~/main/wallpapers   Desktop background images
 ~/main/etc/torrents Pirated movies/music
 ~/main/projects     Code projects, repos
 ```
