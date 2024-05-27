@@ -24,3 +24,5 @@ rm -rf ~/Downloads/JetBrainsMono
 ~/main/etc/torrents Pirated movies/music
 ~/main/projects     Code projects, repos
 ```
+
+Use `lxappearance` to customize system-wide GTK theme (requires restarting to show up in firefox, pavucontrol etc.)
