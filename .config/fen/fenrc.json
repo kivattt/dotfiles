@@ -17,6 +17,19 @@
 		{
 			"programs": ["nvim", "vim", "vi"],
 			"match": ["*.json"]
+		},
+		{
+			"programs": ["nvim", "vim"],
+			"match": [
+				"*.zip", "*.jar", "*.kra",
+				"*.tar.bz2", "*.tb2", "*.tbz", "*.tbz2", "*.tz2",
+				"*.tar.gz", "*.taz", "*.tgz",
+				"*.tar.lz",
+				"*.tar.lzma", "*.tlz",
+				"*.tar.lzo",
+				"*.tar.xz", "*.tZ", "*.taZ",
+				"*.tar.zst", "*.tzst"
+			]
 		}
 	]
 }
