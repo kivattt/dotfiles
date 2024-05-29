@@ -21,6 +21,7 @@ alias vim="$EDITOR"
 alias v="$EDITOR"
 alias b="$EDITOR ~/.bashrc"
 alias vr="$EDITOR ~/.config/nvim/init.lua"
+alias fr="$EDITOR ~/.config/fen/fenrc.json"
 
 alias p=cat
 alias lowercase="tr [:upper:] [:lower:]"
@@ -102,7 +103,7 @@ fi
 # Cursed program aliases #
 #------------------------#
 alias krita="~/Downloads/krita-5.2.2-x86_64.appimage"
-alias idea="~/Downloads/idea-IC-233.14475.28/bin/idea.sh"
+alias idea="~/Downloads/idea-IC-241.17011.79/bin/idea.sh"
 alias audacity="~/Downloads/audacity-linux-3.4.2-x64.AppImage"
 alias discord="~/Downloads/discord/Discord/Discord"
 alias re="~/Downloads/MultiMC/MultiMC"

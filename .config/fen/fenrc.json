@@ -1,0 +1,22 @@
+{
+	"ui-borders": false,
+	"no-write": false,
+
+	"open-with": [
+		{
+			"programs": ["mpv", "vlc"],
+			"match": [
+				"*.mp4", "*.webm", "*.mkv", "*.mov", "*.avi", "*.flv",
+				"*.wav", "*.flac", "*.mp3", "*.ogg", "*.m4a"
+			]
+		},
+		{
+			"programs": ["feh"],
+			"match": ["*.png", "*.jpg", "*.jpeg", "*.jfif", "*.flif", "*.tiff", "*.gif", "*.webp", "*.bmp"]
+		},
+		{
+			"programs": ["nvim", "vim", "vi"],
+			"match": ["*.json"]
+		}
+	]
+}

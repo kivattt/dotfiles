@@ -31,7 +31,7 @@ bar {
 }
 
 # Set wallpaper
-exec_always feh --bg-fill ~/main/wallpapers/right.jpg ~/main/wallpapers/left.png ~/main/wallpapers/middle.png
+exec_always feh --bg-fill ~/main/wallpapers/middle.png ~/main/wallpapers/right.png ~/main/wallpapers/left.png
 
 # Set caps-lock to be same as esc key
 exec_always xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
