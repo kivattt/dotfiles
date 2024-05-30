@@ -15,9 +15,10 @@ rm -rf ~/Downloads/JetBrainsMono
 
 ## Home folder structure
 ```
-~/dotfiles github.com/kivattt/dotfiles
-~/tutils   github.com/kivattt/tutils
-~/fen      github.com/kivattt/fen
+~/dotfiles   github.com/kivattt/dotfiles
+~/tutils     github.com/kivattt/tutils
+~/fen        github.com/kivattt/fen
+~/rainbowize github.com/kivattt/rainbowize
 
 ~/main              The folder the terminal will start at
 ~/main/wallpapers   Desktop background images
