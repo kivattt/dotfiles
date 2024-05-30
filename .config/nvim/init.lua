@@ -117,7 +117,7 @@ require("mason").setup({})
 ]]--
 local lspconfig = require("lspconfig")
 lspconfig.gopls.setup({})         -- Go
-lspconfig.clangd.setup({})        -- C/C++
+--lspconfig.clangd.setup({})        -- C/C++
 lspconfig.ocamllsp.setup({})      -- OCaml
 lspconfig.lua_ls.setup({})        -- Lua
 lspconfig.jdtls.setup({})         -- Java (Requires Java 17+ to be used, tldr: `sudo update-alternatives --config java`)
