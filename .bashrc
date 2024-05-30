@@ -4,6 +4,7 @@ git_branch() {
 
 rainbowizepath=~/rainbowize
 if test -x $rainbowizepath/rainbowize; then
+	alias rainbowize="$rainbowizepath/rainbowize"
 	export PS1="\[\033[0;32m\]$(~/rainbowize/rainbowize $USER) \[\033[0m\]\w \[\033[0;35m\]\$(git_branch)\n\[\033[0;31m\033[0m\]\[\033[0;37m\]$\[\033[0m\] "
 else
 	export PS1="\[\033[0;32m\]\u \[\033[0m\]\w \[\033[0;35m\]\$(git_branch)\n\[\033[0;31m\033[0m\]\[\033[0;37m\]$\[\033[0m\] "
