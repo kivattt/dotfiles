@@ -1,5 +1,6 @@
 {
 	"ui-borders": false,
+	"no-mouse": false,
 	"no-write": false,
 
 	"open-with": [
