@@ -57,7 +57,7 @@ alias gds="git diff --staged"
 # My terminal file manager, fen     #
 #-----------------------------------#
 fenpath=~/fen
-if test -d $fenpath; then
+if test -x $fenpath/fen; then
 	# Overriding the previous 'r' alias
 	alias r="$fenpath/fen"
 	alias fen="$fenpath/fen"
