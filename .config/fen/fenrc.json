@@ -2,6 +2,7 @@
 	"ui-borders": false,
 	"no-mouse": false,
 	"no-write": false,
+	"dont-show-hidden-files": false,
 
 	"open-with": [
 		{
