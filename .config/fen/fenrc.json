@@ -18,7 +18,9 @@
 		{
 			"programs": ["nvim", "vim", "vi"],
 			"match": [
-				"*.json",
+				".gitignore", "LICENSE",
+
+				"*.json", "*.txt", "*.mod", "*.sum",
 
 				"*.zip", "*.jar", "*.kra",
 				"*.tar.bz2", "*.tb2", "*.tbz", "*.tbz2", "*.tz2",
