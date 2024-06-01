@@ -12,7 +12,7 @@
 			]
 		},
 		{
-			"programs": ["feh"],
+			"programs": ["xviewer", "xdg-open", "feh"],
 			"match": ["*.png", "*.jpg", "*.jpeg", "*.jfif", "*.flif", "*.tiff", "*.gif", "*.webp", "*.bmp"]
 		},
 		{
