@@ -25,6 +25,9 @@ Plug("williamboman/mason-lspconfig.nvim")
 -- https://github.com/BurntSushi/ripgrep
 Plug("nvim-telescope/telescope.nvim", { ["branch"] = "0.1.x" })
 
+-- See git blames
+Plug("rhysd/git-messenger.vim")
+
 Plug("folke/todo-comments.nvim")
 
 vim.call("plug#end")

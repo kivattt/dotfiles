@@ -51,7 +51,7 @@ set $sup Mod4
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 15 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 15 # decrease screen brightness
 
-bindsym $sup+d exec dmenu_run -p M -nb "#040426"
+bindsym $sup+d exec dmenu_run -i -p M -nb "#040426" -fn "JetBrains Mono-10" -l 6
 
 bindsym $sup+t exec xterm
 bindsym $sup+g exec firefox
