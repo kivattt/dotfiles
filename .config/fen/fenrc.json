@@ -4,6 +4,7 @@
 	"no-write": false,
 	"dont-show-hidden-files": true,
 	"folders-not-first": false,
+	"print-path-on-open": false,
 
 	"open-with": [
 		{
@@ -18,11 +19,11 @@
 			"match": ["*.png", "*.jpg", "*.jpeg", "*.jfif", "*.flif", "*.tiff", "*.gif", "*.webp", "*.bmp"]
 		},
 		{
-			"programs": ["nvim", "vim", "vi"],
+			"programs": ["nvim -p", "vim -p", "vi -p"],
 			"match": [
 				".gitignore", "LICENSE",
 
-				"*.json", "*.txt", "*.mod", "*.sum",
+				"*.json", "*.txt", "go.mod", "go.sum",
 
 				"*.zip", "*.jar", "*.kra",
 				"*.tar.bz2", "*.tb2", "*.tbz", "*.tbz2", "*.tz2",
