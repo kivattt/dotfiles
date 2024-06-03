@@ -56,18 +56,10 @@ alias gds="git diff --staged"
 #-----------------------------------#
 # My terminal file manager, fen     #
 #-----------------------------------#
-fenpath=~/fen
-if test -x $fenpath/fen; then
-	# Overriding the previous 'r' alias
-	alias r="$fenpath/fen"
-	alias fen="$fenpath/fen"
+if command -v fen > /dev/null; then
+	alias r="fen"
 else
-	echo "Could not find fen in $fenpath"
-	echo "Try the following, then re-open a terminal;"
-	echo "cd"
-	echo "git clone https://github.com/kivattt/fen"
-	echo "cd fen"
-	echo "go build"
+	printf "\e[0;31mfen missing! Install: https://github.com/kivattt/fen\n"
 fi
 
 #-----------------------------------#
