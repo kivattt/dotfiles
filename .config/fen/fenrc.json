@@ -1,6 +1,5 @@
 {
 	"dont-show-hidden-files": true,
-
 	"open-with": [
 		{
 			"programs": ["mpv", "vlc"],
@@ -18,7 +17,6 @@
 			"match": ["*"]
 		}
 	],
-
 	"preview-with": [
 		{
 			"script": "rainbow.lua",
