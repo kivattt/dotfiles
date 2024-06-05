@@ -19,11 +19,11 @@
 	],
 	"preview-with": [
 		{
-			"script": "markdown.lua",
+			"script": "file-previews/markdown.lua",
 			"match": ["*.md"]
 		},
 		{
-			"script": "rainbow.lua",
+			"script": "file-previews/rainbow.lua",
 			"match": ["*"],
 			"do-not-match": [
 				"*.mp4", "*.webm", "*.mkv", "*.mov", "*.avi", "*.flv",
