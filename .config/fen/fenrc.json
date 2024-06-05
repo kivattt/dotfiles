@@ -19,6 +19,10 @@
 	],
 	"preview-with": [
 		{
+			"script": "file-previews/show-nothing.lua",
+			"match": ["*.key", "*.rk"]
+		},
+		{
 			"script": "file-previews/markdown.lua",
 			"match": ["*.md"]
 		},
@@ -31,8 +35,6 @@
 
 				"*.png", "*.jpg", "*.jpeg", "*.jfif", "*.flif", "*.tiff", "*.gif", "*.webp", "*.bmp",
 
-				"*.o", "*.otf", "*.appimage",
-
 				"*.zip", "*.jar", "*.kra",
 				"*.tar.bz2", "*.tb2", "*.tbz", "*.tbz2", "*.tz2",
 				"*.tar.gz", "*.taz", "*.tgz",
@@ -41,7 +43,11 @@
 				"*.tar.lzo",
 				"*.tar.xz", "*.tZ", "*.taZ",
 				"*.tar.zst", "*.tzst",
+
+				"*.pdf", "*.epub", "*.docx", "*.doc", "*.odg", "*.fodg", "*.otg",
 			
+				"*.o", "*.otf", "*.appimage", "*.vhd", "*.deb", "*.iso",
+
 				"fen"
 			]
 		},
