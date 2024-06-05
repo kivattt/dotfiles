@@ -19,6 +19,10 @@
 	],
 	"preview-with": [
 		{
+			"script": "markdown.lua",
+			"match": ["*.md"]
+		},
+		{
 			"script": "rainbow.lua",
 			"match": ["*"],
 			"do-not-match": [
@@ -27,7 +31,17 @@
 
 				"*.png", "*.jpg", "*.jpeg", "*.jfif", "*.flif", "*.tiff", "*.gif", "*.webp", "*.bmp",
 
-				"*.o", "*.otf",
+				"*.o", "*.otf", "*.appimage",
+
+				"*.zip", "*.jar", "*.kra",
+				"*.tar.bz2", "*.tb2", "*.tbz", "*.tbz2", "*.tz2",
+				"*.tar.gz", "*.taz", "*.tgz",
+				"*.tar.lz",
+				"*.tar.lzma", "*.tlz",
+				"*.tar.lzo",
+				"*.tar.xz", "*.tZ", "*.taZ",
+				"*.tar.zst", "*.tzst",
+			
 				"fen"
 			]
 		},
