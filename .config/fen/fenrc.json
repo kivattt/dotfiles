@@ -30,6 +30,8 @@
 			"script": "file-previews/rainbow.lua",
 			"match": ["*"],
 			"do-not-match": [
+				"*.*~",
+
 				"*.mp4", "*.webm", "*.mkv", "*.mov", "*.avi", "*.flv",
 				"*.wav", "*.flac", "*.mp3", "*.ogg", "*.m4a",
 
@@ -47,6 +49,8 @@
 				"*.pdf", "*.epub", "*.docx", "*.doc", "*.odg", "*.fodg", "*.otg",
 			
 				"*.o", "*.otf", "*.appimage", "*.vhd", "*.deb", "*.iso",
+
+				"*.out", "*.exe",
 
 				"fen"
 			]
