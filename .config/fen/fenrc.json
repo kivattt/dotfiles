@@ -50,7 +50,7 @@
 			
 				"*.o", "*.otf", "*.appimage", "*.vhd", "*.deb", "*.iso",
 
-				"*.out", "*.exe",
+				"*.out", "*.exe", "*.class",
 
 				"fen"
 			]
