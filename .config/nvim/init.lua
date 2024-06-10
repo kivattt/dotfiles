@@ -71,6 +71,9 @@ map("i", "<C-d>", "<Esc>Vyp$i")
 map("i", "<C-x>", "<Esc>Vda")
 map("i", "<C-t>", "<Esc>:tabnew ")
 
+-- Shift + F6
+map("i", "<F18>", vim.lsp.buf.rename)
+
 -- Same as above, just for normal mode
 map("n", "<Tab>", "gt")
 map("n", "<S-Tab>", "gT")
@@ -88,6 +91,8 @@ map("n", "<C-Down>", vim.diagnostic.goto_prev)
 map("n", "<C-k>", vim.diagnostic.goto_prev)
 
 map("n", "?", vim.lsp.buf.hover)
+-- Shift + F6
+map("n", "<F18>", vim.lsp.buf.rename)
 
 vim.g.mapleader = " "
 
