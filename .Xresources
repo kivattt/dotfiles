@@ -14,13 +14,8 @@ XTerm.fullscreen: never
 XTerm.vt100.locale: false
 XTerm.vt100.utf8: true
 
-! Colors
-!XTerm.vt100.background: black
-!XTerm.vt100.foreground: white
-
-! We can set individual colors like so:
-!XTerm.vt100.color0: #000000
-!XTerm.vt100.color1: #000000
+! Fixes backspace in fen, ^- is undef (https://invisible-island.net/xterm/manpage/xterm.html#Application-Resources:ttyModes)
+XTerm.ttyModes: erase ^-
 
 ! special
 *.foreground:   #cad0d1

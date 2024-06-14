@@ -104,6 +104,9 @@ local builtin = require("telescope.builtin")
 map("n", "<C-S-n>", builtin.find_files, {})
 map("n", "<C-S-f>", builtin.live_grep, {})
 
+map("i", "<C-S-n>", builtin.find_files, {})
+map("i", "<C-S-f>", builtin.live_grep, {})
+
 require("telescope").setup({
 	defaults = {
 		layout_config = {
