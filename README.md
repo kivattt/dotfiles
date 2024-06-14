@@ -33,6 +33,7 @@ Based on https://go.dev/doc/install
 
 [Download the latest .tar.gz release](https://go.dev/dl/), then:
 ```console
+cd ~/Downloads
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.3.linux-amd64.tar.gz
 ```
 
