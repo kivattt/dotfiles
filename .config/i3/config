@@ -102,6 +102,10 @@ bindsym --whole-window $sup+w floating toggle
 new_window pixel 10
 for_window [class="^.*"] border pixel 0
 for_window [class="^.*"] border normal
+
+for_window [all] title_window_icon yes
+for_window [all] title_window_icon padding 3
+
 # Color                 border  backgr. text    indica. child_border
 client.focused          #040426 #000000 #ffffff #040426 #040426
 client.focused_inactive #083363 #000000 #ffffff #083363 #083363
