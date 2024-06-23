@@ -19,15 +19,19 @@
 	],
 	"preview-with": [
 		{
-			"script": "file-previews/show-nothing.lua",
+			"script": "FEN_CONFIG_PATH/show-nothing.lua",
 			"match": ["*.key", "*.rk"]
 		},
 		{
-			"script": "file-previews/markdown.lua",
+			"programs": ["bash FEN_CONFIG_PATH/mp4.bash"],
+			"match": ["*.mp4"]
+		},
+		{
+			"script": "FEN_CONFIG_PATH/markdown.lua",
 			"match": ["*.md"]
 		},
 		{
-			"script": "file-previews/rainbow.lua",
+			"script": "FEN_CONFIG_PATH/rainbow.lua",
 			"match": ["*"],
 			"do-not-match": [
 				"*.*~",

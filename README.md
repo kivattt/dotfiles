@@ -1,6 +1,8 @@
 ## My configuration files
 `autoexec.cfg` is my config file for Team Fortress 2
 
+`.config/fen/fenrc.json` only works for fen v1.2.2 and above
+
 To use the JetBrains Mono font with XTerm, run this:
 ```console
 cd ~/Downloads
