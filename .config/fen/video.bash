@@ -16,7 +16,7 @@ fi
 if type ffprobe > /dev/null 2> /dev/null; then
 	printf "" # No-op
 else
-	echo "ffprobe missing, it is required to show video dimensions"
+	echo "ffprobe (of ffmpeg) missing, it is required to show video dimensions"
 	exit 3
 fi
 
