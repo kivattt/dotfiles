@@ -23,8 +23,8 @@
 			"match": ["*.key", "*.rk"]
 		},
 		{
-			"programs": ["bash FEN_CONFIG_PATH/mp4.bash"],
-			"match": ["*.mp4"]
+			"programs": ["bash FEN_CONFIG_PATH/video.bash"],
+			"match": ["*.mp4", "*.webm", "*.mkv", "*.mov", "*.avi", "*.flv"]
 		},
 		{
 			"script": "FEN_CONFIG_PATH/markdown.lua",
