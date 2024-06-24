@@ -20,7 +20,7 @@
 	"preview-with": [
 		{
 			"script": "FEN_CONFIG_PATH/show-nothing.lua",
-			"match": ["*.key", "*.rk"]
+			"match": ["*.key", "*.rk", "sitemanager.xml"]
 		},
 		{
 			"programs": ["bash FEN_CONFIG_PATH/video.bash"],
@@ -31,9 +31,12 @@
 			"match": ["*.md"]
 		},
 		{
-			"script": "FEN_CONFIG_PATH/rainbow.lua",
-			"match": ["*"],
-			"do-not-match": [
+			"script": "FEN_CONFIG_PATH/toml.lua",
+			"match": ["*.toml", "*.lock"]
+		},
+		{
+			"programs": ["file -b"],
+			"match": [
 				"*.*~",
 
 				"*.mp4", "*.webm", "*.mkv", "*.mov", "*.avi", "*.flv",
@@ -56,11 +59,13 @@
 
 				"*.out", "*.exe", "*.class",
 
+				"*.sqlite*",
+
 				"fen"
 			]
 		},
 		{
-			"programs": ["file -b"],
+			"script": "FEN_CONFIG_PATH/comments-and-strings.lua",
 			"match": ["*"]
 		}
 	]
