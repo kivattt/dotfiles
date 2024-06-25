@@ -140,6 +140,7 @@ lspconfig.lua_ls.setup({
 })                                -- Lua
 lspconfig.jdtls.setup({})         -- Java (Requires Java 17+ to be used, tldr: `sudo update-alternatives --config java`)
 lspconfig.rust_analyzer.setup({}) -- Rust
+lspconfig.elp.setup({})           -- Erlang
 
 -- Tab for autocomplete key map
 local luasnip = require("luasnip")

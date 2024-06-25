@@ -35,6 +35,10 @@
 			"match": ["*.toml", "*.lock"]
 		},
 		{
+			"script": "FEN_CONFIG_PATH/desktop.lua",
+			"match": ["*.desktop"]
+		},
+		{
 			"programs": ["file -b"],
 			"match": [
 				"*.*~",
