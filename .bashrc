@@ -28,7 +28,7 @@ alias vim="$EDITOR"
 alias v="$EDITOR"
 alias b="$EDITOR ~/.bashrc"
 alias vr="$EDITOR ~/.config/nvim/init.lua"
-alias fr="$EDITOR ~/.config/fen/fenrc.json"
+alias fr="$EDITOR ~/.config/fen/config.lua"
 
 alias p=cat
 alias lowercase="tr [:upper:] [:lower:]"

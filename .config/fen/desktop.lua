@@ -21,6 +21,7 @@ local State = {
 local y = 0
 for line in io.lines(fen.selectedFile) do
 	local state = State.Key
+	local seenEqualsSign = false
 
 	-- Group header
 	if line:sub(1,1) == '[' then
@@ -31,7 +32,8 @@ for line in io.lines(fen.selectedFile) do
 	for i = 1, #line do
 		local char = line:sub(i,i)
 
-		if char == '=' then
+		if char == '=' and not seenEqualsSign then
+			seenEqualsSign = true
 			state = State.Value
 			fen:PrintSimple("["..colorForEquals.."]"..char, i-1, y)
 			goto continue
