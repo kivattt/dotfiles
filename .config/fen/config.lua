@@ -9,8 +9,6 @@ local function concat(a, b)
 	return a
 end
 
-local c = fen.config_path
-
 local secret = {"*.key", "*.rk", "sitemanager.xml"}
 local video = {"*.mp4", "*.webm", "*.mkv", "*.mov", "*.avi", "*.flv"}
 local audio = {"*.wav", "*.flac", "*.mp3", "*.ogg", "*.m4a"}
@@ -31,6 +29,7 @@ everythingToPreviewWithFile = concat(everythingToPreviewWithFile, image)
 everythingToPreviewWithFile = concat(everythingToPreviewWithFile, archive)
 everythingToPreviewWithFile = concat(everythingToPreviewWithFile, document)
 
+local c = fen.config_path
 fen.preview = {
 	{script  = c.."show-nothing.lua",         match = secret},
 	{script  = c.."markdown.lua",             match = "*.md"},
