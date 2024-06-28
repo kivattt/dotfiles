@@ -1,4 +1,6 @@
 fen.hidden_files = false
+fen.show_help_text = false
+fen.sort_by = "modified"
 
 local function concat(a, b)
 	for _, v in ipairs(b) do
@@ -38,4 +40,3 @@ fen.preview = {
 	{program =    "file -b",                  match = everythingToPreviewWithFile},
 	{script  = c.."comments-and-strings.lua", match = "*"}
 }
-
