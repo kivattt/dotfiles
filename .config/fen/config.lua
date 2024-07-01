@@ -13,12 +13,13 @@ local secret = {"*.key", "*.rk", "sitemanager.xml"}
 local video = {"*.mp4", "*.webm", "*.mkv", "*.mov", "*.avi", "*.flv"}
 local audio = {"*.wav", "*.flac", "*.mp3", "*.ogg", "*.m4a"}
 local image = {"*.png", "*.jpg", "*.jpeg", "*.jfif", "*.flif", "*.tiff", "*.gif", "*.webp", "*.bmp"}
-local archive = {"*.zip","*.jar","*.kra","*.tar.bz2","*.tb2","*.tbz","*.tbz2","*.tz2","*.tar.gz","*.taz","*.tgz","*.tar.lz","*.tar.lzma","*.tlz","*.tar.lzo","*.tar.xz","*.tZ","*.taZ","*.tar.zst","*.tzst"}
+local archive = {"*.zip","*.jar","*.kra","*.tar.bz2","*.tb2","*.tbz","*.tbz2","*.tz2","*.tar.gz","*.taz","*.tgz","*.tar.lz","*.tar.lzma","*.tlz","*.tar.lzo","*.tar.xz","*.tZ","*.taZ","*.tar.zst","*.tzst","*.rar"}
 local document = {"*.pdf","*.epub","*.docx","*.doc","*.odg","*.fodg","*.otg"}
 
 fen.open = {
 	{program = {"mpv", "vlc"}, match = concat(video, audio)},
 	{program = {"xviewer", "xdg-open", "feh"}, match = image},
+	{program = "xdg-open", match = document},
 	{program = {"nvim -p", "vim -p", "vi -p"}, match = {"*"}}
 }
 
