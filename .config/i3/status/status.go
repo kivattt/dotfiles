@@ -192,11 +192,16 @@ func main() {
 					}
 				}
 			}
-
-			ip = "<span foreground=\"#00ff00\">" + ip + "</span>"
 		}
 
-		textList = append(textList, "<span foreground=\"#aaaaaa\">IP:</span> "+ip)
+		otherIP, _ := exec.Command("ip", "route", "get", "1").Output()
+		otherIPSplit := strings.Split(strings.ReplaceAll(string(otherIP), "  ", ""), " ")
+		otherIPStr := otherIPSplit[len(otherIPSplit)-5]
+		if otherIPStr != "" {
+			ip += ", " + otherIPStr
+		}
+
+		textList = append(textList, "<span foreground=\"#aaaaaa\">IP:</span> <span foreground=\"#00ff00\">"+ip+"</span>")
 
 		disks, err := DisksNameAndSizeAndMountPoints()
 		if err != nil {
