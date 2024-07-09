@@ -26,7 +26,9 @@ bindsym Mod1+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Y' 'i3-msg exit'"
 # finds out, if available)
 bar {
 		position bottom
-        status_command i3status
+#        status_command i3status
+        status_command ~/.config/i3/status/status
+#        status_command ~/.config/i3/status/trivial-bar-script.sh
 #		tray_output primary
 }
 

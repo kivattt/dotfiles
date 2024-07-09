@@ -16,10 +16,13 @@ local image = {"*.png", "*.jpg", "*.jpeg", "*.jfif", "*.flif", "*.tiff", "*.gif"
 local archive = {"*.zip","*.jar","*.kra","*.tar.bz2","*.tb2","*.tbz","*.tbz2","*.tz2","*.tar.gz","*.taz","*.tgz","*.tar.lz","*.tar.lzma","*.tlz","*.tar.lzo","*.tar.xz","*.tZ","*.taZ","*.tar.zst","*.tzst","*.rar"}
 local document = {"*.pdf","*.epub","*.docx","*.doc","*.odg","*.fodg","*.otg"}
 
+local c = fen.config_path
+
 fen.open = {
 	{program = {"mpv", "vlc"}, match = concat(video, audio)},
 	{program = {"xviewer", "xdg-open", "feh"}, match = image},
 	{program = "xdg-open", match = document},
+--	{script = c.."open/archive.lua", match = archive},
 	{program = {"nvim -p", "vim -p", "vi -p"}, match = {"*"}}
 }
 
@@ -30,9 +33,9 @@ everythingToPreviewWithFile = concat(everythingToPreviewWithFile, image)
 everythingToPreviewWithFile = concat(everythingToPreviewWithFile, archive)
 everythingToPreviewWithFile = concat(everythingToPreviewWithFile, document)
 
-local c = fen.config_path
 fen.preview = {
 	{script  = c.."show-nothing.lua",         match = secret},
+	{script  = c.."show-nothing.lua",         match = "pagemap"},
 	{script  = c.."markdown.lua",             match = "*.md"},
 	{script  = c.."toml.lua",                 match = {"*.toml", "*.lock"}},
 	{script  = c.."desktop.lua",              match = "*.desktop"},
