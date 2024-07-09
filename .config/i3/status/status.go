@@ -74,13 +74,13 @@ func BytesToHumanReadableUnitString(bytes uint64, maxDecimals int) string {
 	return trimLastDecimals(strconv.FormatFloat(float64(bytes)/unitValues[len(unitValues)-1], 'f', -1, 64), maxDecimals) + " " + unitStrings[len(unitStrings)-1]
 }
 
-func DisksNameAndMountPoints() ([][2]string, error) {
-	out, err := exec.Command("lsblk", "-o", "NAME,MOUNTPOINT").Output()
+func DisksNameAndSizeAndMountPoints() ([][3]string, error) {
+	out, err := exec.Command("lsblk", "-bo", "NAME,SIZE,MOUNTPOINT").Output()
 	if err != nil {
 		return nil, err
 	}
 
-	ret := [][2]string{}
+	ret := [][3]string{}
 
 	lastDiskName := ""
 	for _, line := range strings.Split(string(out), "\n") {
@@ -93,78 +93,81 @@ func DisksNameAndMountPoints() ([][2]string, error) {
 			continue
 		}
 
+		size := lineSplitSpaces[len(lineSplitSpaces)-2]
 		mountPoint := lineSplitSpaces[len(lineSplitSpaces)-1]
 
 		if mountPoint == "/" || strings.HasPrefix(mountPoint, "/mnt/") {
-			ret = append(ret, [2]string{lastDiskName, mountPoint})
+			ret = append(ret, [3]string{lastDiskName, size, mountPoint})
 		}
 	}
 
 	return ret, nil
 }
 
-func date() string {
-	now := time.Now()
-	left :=  now.Format("2006-01-02")
-	middle := now.Format("Jan 2")
+func dateText(now time.Time) string {
+	left := now.Format("2006-01-02")
+	middle := now.Format("Mon Jan 2")
+	return left + " <span foreground=\"#aaaaaa\">" + middle + "</span>"
+}
+
+func timeText(now time.Time) string {
 	right := now.Format("15:04:05")
-	return left + " <span foreground=\"#aaaaaa\">" + middle + "</span> " + right
+	return "<span foreground=\"#ffffff\" size=\"11pt\" weight=\"ultralight\">" + right + "</span>"
 }
 
 type Memory struct {
-	MemTotal int
-	MemFree int
-	MemAvailable int
-	MemCached int
+	MemTotal        int
+	MemFree         int
+	MemAvailable    int
+	MemCached       int
 	MemSReclaimable int
-	MemShmem int
+	MemShmem        int
 }
 
 func parseLine(raw string) (key string, value int) {
-    text := strings.ReplaceAll(raw[:len(raw)-2], " ", "")
-    keyValue := strings.Split(text, ":")
-    return keyValue[0], toInt(keyValue[1])
+	text := strings.ReplaceAll(raw[:len(raw)-2], " ", "")
+	keyValue := strings.Split(text, ":")
+	return keyValue[0], toInt(keyValue[1])
 }
 
 func toInt(raw string) int {
-    if raw == "" {
-        return 0
-    }
-    res, err := strconv.Atoi(raw)
-    if err != nil {
-        panic(err)
-    }
-    return res
+	if raw == "" {
+		return 0
+	}
+	res, err := strconv.Atoi(raw)
+	if err != nil {
+		panic(err)
+	}
+	return res
 }
 
-
 func ReadMemoryStats() Memory {
-    file, err := os.Open("/proc/meminfo")
-    if err != nil {
-        panic(err)
-    }
-    defer file.Close()
-    bufio.NewScanner(file)
-    scanner := bufio.NewScanner(file)
-    res := Memory{}
-    for scanner.Scan() {
-        key, value := parseLine(scanner.Text())
-        switch key {
-        case "MemTotal":
-            res.MemTotal = value
-        case "MemFree":
-            res.MemFree = value
-        case "MemAvailable":
-            res.MemAvailable = value
+	file, err := os.Open("/proc/meminfo")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+	bufio.NewScanner(file)
+	scanner := bufio.NewScanner(file)
+	res := Memory{}
+	for scanner.Scan() {
+		key, value := parseLine(scanner.Text())
+		switch key {
+		case "MemTotal":
+			res.MemTotal = value
+		case "MemFree":
+			res.MemFree = value
+		case "MemAvailable":
+			res.MemAvailable = value
 		case "Cached":
 			res.MemCached = value
 		case "SReclaimable":
 			res.MemSReclaimable = value
 		case "Shmem":
 			res.MemShmem = value
-        }
-    }
-    return res
+		}
+	}
+	return res
 }
 
 func main() {
@@ -193,18 +196,26 @@ func main() {
 			ip = "<span foreground=\"#00ff00\">" + ip + "</span>"
 		}
 
-		textList = append(textList, "<span foreground=\"#aaaaaa\">IP:</span> " + ip)
+		textList = append(textList, "<span foreground=\"#aaaaaa\">IP:</span> "+ip)
 
-		disks, err := DisksNameAndMountPoints()
+		disks, err := DisksNameAndSizeAndMountPoints()
 		if err != nil {
 			panic(err)
 		}
 		for _, disk := range disks {
-			bytes, err := FreeDiskSpaceBytes(disk[1])
+			bytesMax, _ := strconv.Atoi(disk[1])
+			bytesFree, err := FreeDiskSpaceBytes(disk[2])
 			if err != nil {
 				continue
 			}
-			textList = append(textList, "<span foreground=\"#aaaaaa\">" + disk[0] + "</span>: " + BytesToHumanReadableUnitString(bytes, 3))
+
+			diskFreeColor := "#ffffff"
+			if float32(bytesFree)/float32(bytesMax) < 0.1 {
+				diskFreeColor = "#ffff00"
+			} else if float32(bytesFree)/float32(bytesMax) < 0.025 {
+				diskFreeColor = "#ff0000"
+			}
+			textList = append(textList, "<span foreground=\"#aaaaaa\">"+disk[0]+"</span>: <span foreground=\""+diskFreeColor+"\">"+BytesToHumanReadableUnitString(bytesFree, 1)+"</span>")
 		}
 
 		memory := ReadMemoryStats()
@@ -214,19 +225,22 @@ func main() {
 		memoryColor := "#ffffff"
 		if float32(usedMem)/float32(totalMem) > 0.95 {
 			memoryColor = "#ff0000"
-		} else if float32(usedMem) / float32(totalMem) > 0.85 {
+		} else if float32(usedMem)/float32(totalMem) > 0.85 {
 			memoryColor = "#ffff00"
 		}
 
-		textList = append(textList, "<span foreground=\"#aaaaaa\">RAM:</span> " + BytesToHumanReadableUnitString(uint64(usedMem), 1) + "/" + BytesToHumanReadableUnitString(uint64(totalMem), 1))
-		textList = append(textList, date())
+		textList = append(textList, "<span foreground=\"#aaaaaa\">RAM:</span> "+BytesToHumanReadableUnitString(uint64(usedMem), 1)+"/"+BytesToHumanReadableUnitString(uint64(totalMem), 1))
+
+		now := time.Now()
+		textList = append(textList, dateText(now))
+		textList = append(textList, timeText(now))
 
 		fmt.Println(",[")
 		for i, v := range textList {
 			data := map[string]any{
-				"full_text": v,
+				"full_text":             "<span size=\"8pt\" weight=\"bold\">" + v + "</span>",
 				"separator_block_width": 20,
-				"markup": "pango",
+				"markup":                "pango",
 			}
 
 			if strings.HasPrefix(v, "RAM: ") {
@@ -238,7 +252,7 @@ func main() {
 				panic(err)
 			}
 			fmt.Println(string(json))
-			if i != len(textList) - 1 {
+			if i != len(textList)-1 {
 				fmt.Println(",")
 			}
 		}

@@ -1,47 +1,30 @@
-font pango:monospace 7
+#font pango:monospace 7
+font pango:JetBrains Mono 7
 
 set $up l
 set $down k
 set $left j
 set $right semicolon
 
-# split in horizontal orientation
-bindsym Mod1+h split h
-
-# split in vertical orientation
-bindsym Mod1+v split v
-
-# change container layout (stacked, tabbed, toggle split)
-#bindsym Mod1+s layout stacking
-#bindsym Mod1+w layout tabbed
-#bindsym Mod1+e layout toggle split
-
-# change focus between tiling / floating windows
-bindsym Mod1+space focus mode_toggle
-
-# exit i3 (logs you out of your X session)
-bindsym Mod1+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Y' 'i3-msg exit'"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
-		position bottom
-#        status_command i3status
-        status_command ~/.config/i3/status/status
-#        status_command ~/.config/i3/status/trivial-bar-script.sh
-#		tray_output primary
+	position bottom
+	status_command ~/.config/i3/status/status
 }
 
 # Set wallpaper
 exec_always feh --bg-fill ~/main/wallpapers/middle.png ~/main/wallpapers/right.png ~/main/wallpapers/left.png
 
-# Set caps-lock to be same as esc key
 exec_always xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 # Set keyboard repeat delay rate to faster
 exec_always xset r rate 300 40
-
 exec_always xrdb ~/.Xresources
+
+# Monitor layout, edit with arandr
+exec_always ~/.screenlayout/main.sh
+
+# Map wacom tablet to main monitor
+exec_always xsetwacom set "Wacom Cintiq 16 Pen stylus" maptooutput DP-2
 
 # Set mod keys
 set $sup Mod4
@@ -50,26 +33,22 @@ set $sup Mod4
 #bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +5%
 #bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -5%
 #bindsym XF86AudioMute exec pactl -- set-sink-volume 0 0%
-
 # Screen brightness controls
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 15 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 15 # decrease screen brightness
 
-bindsym $sup+d exec dmenu_run -i -p M -nb "#040426" -fn "JetBrains Mono-10" -l 6
+# change focus between tiling / floating windows
+bindsym $sup+space focus mode_toggle
+bindsym Mod1+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Y' 'i3-msg exit'"
 
+bindsym $sup+d exec dmenu_run -i -p M -nb "#040426" -fn "JetBrains Mono-10" -l 6
 bindsym $sup+t exec xterm
 bindsym $sup+g exec firefox
 bindsym $sup+f fullscreen toggle
 bindsym $sup+q kill
-
-# Sketchy pasting hack for keyboards without an Insert key
+# Sketchy Shift+Insert pasting hack for awful laptop keyboards missing an Insert key (cough HP cough)
 bindsym $sup+i exec sleep 0.25 && xdotool keydown Shift && xdotool keydown Insert && sleep 0.2 && xdotool keyup Insert && xdotool keyup Shift
-
 bindsym $sup+Shift+e exec i3-sensible-terminal
-
-
-# arandr main.sh file to set up monitor outputs
-exec_always ~/.screenlayout/main.sh
 
 # Move focused window
 bindsym $sup+Left move left
@@ -92,21 +71,17 @@ bindsym Mod1+Right focus right
 # Use Mouse+$sup to drag floating windows to their wanted position
 floating_modifier $sup
 
-# Move the currently focused window to the scratchpad
 bindsym $sup+s move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
 bindsym $sup+Shift+s scratchpad show
 
-# Toggle tiling / floating
 bindsym --whole-window $sup+w floating toggle
 
-# 4 px borders
+# Lock screen
+bindsym $sup+l exec i3lock -c 000000
+
 new_window pixel 10
 for_window [class="^.*"] border pixel 0
 for_window [class="^.*"] border normal
-
 for_window [all] title_window_icon yes
 for_window [all] title_window_icon padding 3
 
@@ -155,12 +130,3 @@ bindsym $sup+Shift+7 move container to workspace 7
 bindsym $sup+Shift+8 move container to workspace 8
 bindsym $sup+Shift+9 move container to workspace 9
 bindsym $sup+Shift+0 move container to workspace 10
-
-# Lock screen
-bindsym $sup+l exec i3lock -c 000000
-
-# Map wacom tablet to main monitor
-#exec_always xsetwacom set "Wacom Bamboo One S Pen stylus" maptooutput eDP-1
-#exec_always xsetwacom set "Wacom Bamboo One S Pen stylus" maptooutput HDMI-1
-exec_always xsetwacom set "Wacom Cintiq 16 Pen stylus" maptooutput HDMI-1
-
