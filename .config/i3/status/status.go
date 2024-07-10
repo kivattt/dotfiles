@@ -220,7 +220,7 @@ func main() {
 			} else if float32(bytesFree)/float32(bytesMax) < 0.025 {
 				diskFreeColor = "#ff0000"
 			}
-			textList = append(textList, "<span foreground=\"#aaaaaa\">"+disk[0]+"</span>: <span foreground=\""+diskFreeColor+"\">"+BytesToHumanReadableUnitString(bytesFree, 1)+"</span>")
+			textList = append(textList, "<span foreground=\"#aaaaaa\">"+disk[0]+":</span> <span foreground=\""+diskFreeColor+"\">"+BytesToHumanReadableUnitString(bytesFree, 1)+"</span>")
 		}
 
 		memory := ReadMemoryStats()
