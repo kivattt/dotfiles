@@ -9,6 +9,7 @@ set $right semicolon
 bar {
 	position bottom
 	status_command ~/.config/i3/status/status
+	tray_padding 1
 }
 
 # Set wallpaper
