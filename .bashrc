@@ -53,6 +53,8 @@ alias gs="git status"
 alias gd="git diff"
 alias gds="git diff --staged"
 
+alias octave="octave --force-gui"
+
 #-----------------------------------#
 # My terminal file manager, fen     #
 #-----------------------------------#
