@@ -5,6 +5,7 @@ package main
 import (
 	"bufio"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"math"
 	"net"
@@ -116,16 +117,24 @@ func timeText(now time.Time) string {
 	return "<span foreground=\"#ffffff\" size=\"11pt\" weight=\"ultralight\">" + right + "</span>"
 }
 
-func batteryText(batteries []*battery.Battery) string {
+func batteryText(batteries []*battery.Battery) (string, error) {
+	if batteries == nil || len(batteries) < 1 {
+		return "", errors.New("No battery")
+	}
+
 	var builder strings.Builder
 	builder.WriteString("<span foreground=\"#3333ff\">")
 
 	for _, b := range batteries {
+		if b.Full == 0 {
+			return "", errors.New("No battery")
+		}
+
 		builder.WriteString(b.State.String())
-		builder.WriteString(" " + strconv.FormatFloat(b.Current / b.Full*100, 'f', 1, 64) + "%")
+		builder.WriteString(" " + strconv.FormatFloat(b.Current/b.Full*100, 'f', 1, 64) + "%")
 	}
 	builder.WriteString("</span>")
-	return builder.String()
+	return builder.String(), nil
 }
 
 type Memory struct {
@@ -252,8 +261,9 @@ func main() {
 		now := time.Now()
 		textList = append(textList, dateText(now))
 		batteries, _ := battery.GetAll()
-		if batteries != nil && len(batteries) > 0 {
-			textList = append(textList, batteryText(batteries))
+		theBatteryText, err := batteryText(batteries)
+		if err == nil {
+			textList = append(textList, theBatteryText)
 		}
 		textList = append(textList, timeText(now))
 
