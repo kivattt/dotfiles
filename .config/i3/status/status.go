@@ -14,6 +14,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/distatus/battery"
 	"golang.org/x/sys/unix"
 )
 
@@ -113,6 +114,18 @@ func dateText(now time.Time) string {
 func timeText(now time.Time) string {
 	right := now.Format("15:04:05")
 	return "<span foreground=\"#ffffff\" size=\"11pt\" weight=\"ultralight\">" + right + "</span>"
+}
+
+func batteryText(batteries []*battery.Battery) string {
+	var builder strings.Builder
+	builder.WriteString("<span foreground=\"#3333ff\">")
+
+	for _, b := range batteries {
+		builder.WriteString(b.State.String())
+		builder.WriteString(" " + strconv.FormatFloat(b.Current / b.Full*100, 'f', 1, 64) + "%")
+	}
+	builder.WriteString("</span>")
+	return builder.String()
 }
 
 type Memory struct {
@@ -238,6 +251,10 @@ func main() {
 
 		now := time.Now()
 		textList = append(textList, dateText(now))
+		batteries, _ := battery.GetAll()
+		if batteries != nil && len(batteries) > 0 {
+			textList = append(textList, batteryText(batteries))
+		}
 		textList = append(textList, timeText(now))
 
 		fmt.Println(",[")
