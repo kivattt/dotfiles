@@ -30,6 +30,9 @@ Plug("rhysd/git-messenger.vim")
 
 Plug("folke/todo-comments.nvim")
 
+-- GNU Octave language highlighting
+Plug("tranvansang/octave.vim")
+
 vim.call("plug#end")
 
 --[[
