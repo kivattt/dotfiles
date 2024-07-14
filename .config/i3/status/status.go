@@ -216,9 +216,12 @@ func main() {
 			}
 		}
 
+		if ip == "::1" {
+			ip = ""
+		}
 		otherIP, _ := exec.Command("ip", "route", "get", "1").Output()
 		otherIPSplit := strings.Split(strings.ReplaceAll(string(otherIP), "  ", ""), " ")
-		otherIPStr := otherIPSplit[len(otherIPSplit)-5]
+		otherIPStr := otherIPSplit[max(0, len(otherIPSplit)-5)]
 		if otherIPStr != "" {
 			ip += ", " + otherIPStr
 		}
