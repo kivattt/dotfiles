@@ -1,5 +1,4 @@
-#font pango:monospace 7
-font pango:JetBrains Mono 7
+font pango:JetBrains Mono 10
 
 set $up l
 set $down k
