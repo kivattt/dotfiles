@@ -114,7 +114,7 @@ func dateText(now time.Time) string {
 
 func timeText(now time.Time) string {
 	right := now.Format("15:04:05")
-	return "<span foreground=\"#ffffff\" size=\"11pt\" weight=\"ultralight\">" + right + "</span>"
+	return "<span foreground=\"#ffffff\" size=\"15pt\" weight=\"ultralight\">" + right + "</span>"
 }
 
 func batteryText(batteries []*battery.Battery) (string, error) {
@@ -273,7 +273,7 @@ func main() {
 		fmt.Println(",[")
 		for i, v := range textList {
 			data := map[string]any{
-				"full_text":             "<span size=\"8pt\" weight=\"bold\">" + v + "</span>",
+				"full_text":             "<span size=\"10pt\" weight=\"bold\">" + v + "</span>",
 				"separator_block_width": 20,
 				"markup":                "pango",
 			}

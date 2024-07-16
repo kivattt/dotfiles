@@ -13,7 +13,7 @@ bar {
 }
 
 # Set wallpaper
-exec_always feh --bg-fill ~/main/wallpapers/middle.png ~/main/wallpapers/right.png ~/main/wallpapers/left.png
+exec_always feh --bg-fill ~/main/wallpapers/middle2.png ~/main/wallpapers/right.png ~/main/wallpapers/left.png
 
 exec_always xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
@@ -42,7 +42,7 @@ set $sup Mod4
 bindsym $sup+space focus mode_toggle
 bindsym Mod1+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Y' 'i3-msg exit'"
 
-bindsym $sup+d exec dmenu_run -i -p M -nb "#040426" -fn "JetBrains Mono-10" -l 6
+bindsym $sup+d exec dmenu_run -i -p M -nb "#040426" -fn "JetBrains Mono-12" -l 6
 bindsym $sup+t exec xterm
 bindsym $sup+g exec firefox
 bindsym $sup+f fullscreen toggle

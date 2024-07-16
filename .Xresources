@@ -55,10 +55,10 @@ XTerm.ttyModes: erase ^-
 *.color15:      #ffffff
 
 ! Font
-XTerm.vt100.faceName: JetBrains Mono:size=9:antialias=true
+XTerm.vt100.faceName: JetBrains Mono:size=10.5:antialias=true
 XTerm.vt100.renderFont: true
 
 ! X11
 Xcursor.size: 16
 !*dpi: 125
-Xft.dpi: 110
+!Xft.dpi: 110
