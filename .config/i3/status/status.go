@@ -107,14 +107,13 @@ func DisksNameAndSizeAndMountPoints() ([][3]string, error) {
 }
 
 func dateText(now time.Time) string {
-	left := now.Format("2006-01-02")
-	middle := now.Format("Mon Jan 2")
-	return left + " <span foreground=\"#aaaaaa\">" + middle + "</span>"
+	left := now.Format("Mon Jan 2")
+	right := now.Format("2006-01-02")
+	return "<span foreground=\"" + dimTextColor + "\">" + left + "</span> " + right
 }
 
 func timeText(now time.Time) string {
-	right := now.Format("15:04:05")
-	return "<span foreground=\"#ffffff\" size=\"15pt\" weight=\"ultralight\">" + right + "</span>"
+	return "<span foreground=\"" + whiteTextColor + "\" size=\"15pt\" weight=\"180\">" + now.Format("15:04:05") + "</span>"
 }
 
 func batteryText(batteries []*battery.Battery) (string, error) {
@@ -192,6 +191,9 @@ func ReadMemoryStats() Memory {
 	return res
 }
 
+var whiteTextColor = "#dddddd"
+var dimTextColor = "#777777"
+
 func main() {
 	fmt.Println("{\"version\":1}")
 	fmt.Println("[")
@@ -226,7 +228,7 @@ func main() {
 			ip += ", " + otherIPStr
 		}
 
-		textList = append(textList, "<span foreground=\"#aaaaaa\">IP:</span> <span foreground=\"#00ff00\">"+ip+"</span>")
+		textList = append(textList, "<span foreground=\""+dimTextColor+"\">IP:</span> <span foreground=\"#35d462\">"+ip+"</span>")
 
 		disks, err := DisksNameAndSizeAndMountPoints()
 		if err != nil {
@@ -239,27 +241,27 @@ func main() {
 				continue
 			}
 
-			diskFreeColor := "#ffffff"
+			diskFreeColor := whiteTextColor
 			if float32(bytesFree)/float32(bytesMax) < 0.1 {
 				diskFreeColor = "#ffff00"
 			} else if float32(bytesFree)/float32(bytesMax) < 0.025 {
 				diskFreeColor = "#ff0000"
 			}
-			textList = append(textList, "<span foreground=\"#aaaaaa\">"+disk[0]+":</span> <span foreground=\""+diskFreeColor+"\">"+BytesToHumanReadableUnitString(bytesFree, 1)+"</span>")
+			textList = append(textList, "<span foreground=\""+dimTextColor+"\">"+disk[0]+":</span> <span foreground=\""+diskFreeColor+"\">"+BytesToHumanReadableUnitString(bytesFree, 1)+"</span>")
 		}
 
 		memory := ReadMemoryStats()
 		usedMem := (memory.MemTotal - memory.MemAvailable) * 1000
 		totalMem := memory.MemTotal * 1000
 
-		memoryColor := "#ffffff"
+		memoryColor := whiteTextColor
 		if float32(usedMem)/float32(totalMem) > 0.95 {
 			memoryColor = "#ff0000"
 		} else if float32(usedMem)/float32(totalMem) > 0.85 {
 			memoryColor = "#ffff00"
 		}
 
-		textList = append(textList, "<span foreground=\"#aaaaaa\">RAM:</span> "+BytesToHumanReadableUnitString(uint64(usedMem), 1)+"/"+BytesToHumanReadableUnitString(uint64(totalMem), 1))
+		textList = append(textList, "RAM: "+BytesToHumanReadableUnitString(uint64(usedMem), 1)+"/"+BytesToHumanReadableUnitString(uint64(totalMem), 1))
 
 		now := time.Now()
 		textList = append(textList, dateText(now))
@@ -272,14 +274,14 @@ func main() {
 
 		fmt.Println(",[")
 		for i, v := range textList {
-			data := map[string]any{
-				"full_text":             "<span size=\"10pt\" weight=\"bold\">" + v + "</span>",
-				"separator_block_width": 20,
-				"markup":                "pango",
+			if strings.HasPrefix(v, "RAM: ") {
+				v = "<span foreground=\"" + dimTextColor + "\">RAM:</span> <span foreground=\"" + memoryColor + "\">" + v[len("RAM: "):] + "</span>"
 			}
 
-			if strings.HasPrefix(v, "RAM: ") {
-				data["full_text"] = "<span foreground=\"" + memoryColor + "\">" + data["full_text"].(string) + "</span>"
+			data := map[string]any{
+				"full_text":             "<span size=\"11pt\" weight=\"semibold\" foreground=\"" + whiteTextColor + "\">" + v + "</span>",
+				"separator_block_width": 20,
+				"markup":                "pango",
 			}
 
 			json, err := json.Marshal(data)
