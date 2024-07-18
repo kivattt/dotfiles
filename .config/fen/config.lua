@@ -2,6 +2,8 @@ fen.hidden_files = false
 fen.show_help_text = false
 fen.show_hostname = false
 fen.sort_by = "modified"
+fen.always_show_job_and_selection_count = true
+fen.scroll_speed = 3
 
 local function concat(a, b)
 	for _, v in ipairs(b) do
