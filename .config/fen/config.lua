@@ -2,7 +2,7 @@ fen.hidden_files = false
 fen.show_help_text = false
 fen.show_hostname = false
 fen.sort_by = "modified"
-fen.always_show_job_and_selection_count = true
+fen.always_show_info_numbers = true
 fen.scroll_speed = 3
 
 local function concat(a, b)
@@ -24,6 +24,7 @@ local c = fen.config_path
 fen.open = {
 	{program = {"mpv", "vlc"}, match = concat(video, audio)},
 	{program = {"xviewer", "xdg-open", "feh"}, match = image},
+--	{program = {"feh", "xviewer", "xdg-open"}, match = image},
 	{program = "xdg-open", match = document},
 --	{script = c.."open/archive.lua", match = archive},
 	{program = {"nvim -p", "vim -p", "vi -p"}, match = {"*"}}
@@ -46,3 +47,5 @@ fen.preview = {
 	{program =    "file -b",                  match = everythingToPreviewWithFile},
 	{script  = c.."comments-and-strings.lua", match = "*"}
 }
+
+fen.preview = {}
