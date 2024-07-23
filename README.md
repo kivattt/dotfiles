@@ -1,9 +1,7 @@
 ## My configuration files
-`autoexec.cfg` is my config file for Team Fortress 2
+`autoexec.cfg` is a config file for Team Fortress 2
 
-`.config/fen/fenrc.json` only works for fen v1.2.2 and above
-
-To use the JetBrains Mono font with XTerm, run this:
+To install the JetBrains Mono font (for XTerm and i3wm):
 ```console
 cd ~/Downloads
 mkdir JetBrainsMono
@@ -43,4 +41,4 @@ Now add this line to the end of `/etc/profile`:
 ```
 export PATH=$PATH:/usr/local/go/bin
 ```
-Log out and back in again, do `go version` to verify it successfully installed
+Log out (Alt+E) and back in again, do `go version` to verify it successfully installed
