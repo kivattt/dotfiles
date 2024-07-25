@@ -25,6 +25,9 @@ Plug("williamboman/mason-lspconfig.nvim")
 -- https://github.com/BurntSushi/ripgrep
 Plug("nvim-telescope/telescope.nvim", { ["branch"] = "0.1.x" })
 
+-- Ctrl+Shift+I
+Plug("rmagatti/goto-preview")
+
 -- See git blames
 Plug("rhysd/git-messenger.vim")
 
@@ -117,6 +120,10 @@ require("telescope").setup({
 		}
 	}
 })
+
+require("goto-preview").setup()
+map("n", "<C-S-i>", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", {noremap=true})
+map("i", "<C-S-i>", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", {noremap=true})
 
 local lsp_zero = require("lsp-zero")
 lsp_zero.on_attach(function(client, bufnr)
