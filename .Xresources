@@ -19,7 +19,7 @@ XTerm.ttyModes: erase ^-
 
 ! special
 *.foreground:   #cad0d1
-*.background:   #101018
+*.background:   #101017
 *.cursorColor:  #cad0d1
 
 ! black
