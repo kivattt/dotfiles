@@ -60,5 +60,6 @@ XTerm.vt100.renderFont: true
 
 ! X11
 Xcursor.size: 16
+*dpi: 100
 !*dpi: 125
 !Xft.dpi: 110
