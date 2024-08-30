@@ -1,4 +1,3 @@
-fen.hidden_files = false
 fen.show_help_text = false
 fen.show_hostname = false
 fen.sort_by = "modified"
