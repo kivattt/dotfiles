@@ -109,9 +109,11 @@ vim.g.mapleader = " "
 local builtin = require("telescope.builtin")
 map("n", "<C-S-n>", builtin.find_files, {})
 map("n", "<C-S-f>", builtin.live_grep, {})
+map("n", "<F54>", builtin.lsp_references, {}) -- Alt+F6
 
 map("i", "<C-S-n>", builtin.find_files, {})
 map("i", "<C-S-f>", builtin.live_grep, {})
+map("i", "<F54>", builtin.lsp_references, {}) -- Alt+F6
 
 require("telescope").setup({
 	defaults = {
