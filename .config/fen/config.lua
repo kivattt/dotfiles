@@ -48,3 +48,7 @@ fen.preview = {
 }
 
 fen.preview = {}
+
+fen.bookmarks = {
+	[1] = fen.home_path .. "Downloads",
+}
