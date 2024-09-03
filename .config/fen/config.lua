@@ -49,6 +49,11 @@ fen.preview = {
 
 fen.preview = {}
 
+local pathSep = "/"
+if fen.runtime_os == "windows" then
+	pathSep = "\\"
+end
 fen.bookmarks = {
 	[1] = fen.home_path .. "Downloads",
+	[2] = fen.home_path .. "Documents" .. pathSep .. "REAPER Media",
 }
