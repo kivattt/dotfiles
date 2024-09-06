@@ -122,7 +122,7 @@ func batteryText(batteries []*battery.Battery) (string, error) {
 	}
 
 	var builder strings.Builder
-	builder.WriteString("<span foreground=\"#3333ff\">")
+	builder.WriteString("<span foreground=\"#36a4f7\">")
 
 	for _, b := range batteries {
 		if b.Full == 0 {
