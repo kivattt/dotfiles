@@ -56,4 +56,5 @@ end
 fen.bookmarks = {
 	[1] = fen.home_path .. "Downloads",
 	[2] = fen.home_path .. "Documents" .. pathSep .. "REAPER Media",
+	[3] = fen.home_path .. ".steam/debian-installation/steamapps/common/Team Fortress 2/tf/cfg",
 }
