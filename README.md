@@ -3,6 +3,8 @@
 
 Use `lxappearance` to customize system-wide GTK theme (requires restarting to show up in firefox, pavucontrol etc.)
 
+Intellij IDEA theme: [Darcula Pitch Black](https://plugins.jetbrains.com/plugin/14059-darcula-pitch-black)
+
 ## Home folder structure
 ```
 ~/dotfiles   github.com/kivattt/dotfiles
