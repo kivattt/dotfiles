@@ -45,7 +45,7 @@ export PATH=$PATH:/usr/local/go/bin
 ```
 Log out (Alt+E in i3wm) then back in again, do `go version` to verify it successfully installed
 
-## Profiling C++ with valgrind + kcachegrind
+## Profiling C/C++ with valgrind + kcachegrind
 ```console
 # Remember to build your code with the -g flag for debug symbols
 valgrind --tool=callgrind ./your-cpp-program
