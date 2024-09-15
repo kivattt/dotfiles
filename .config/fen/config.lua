@@ -47,7 +47,9 @@ fen.preview = {
 	{script  = c.."comments-and-strings.lua", match = "*"}
 }
 
-fen.preview = {}
+fen.preview = {
+	{script  = c.."markdown.lua",             match = "*.md"},
+}
 
 local pathSep = "/"
 if fen.runtime_os == "windows" then
