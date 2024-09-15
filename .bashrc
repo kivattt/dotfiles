@@ -33,6 +33,8 @@ alias fr="$EDITOR ~/.config/fen/config.lua"
 alias p=cat
 alias lowercase="tr [:upper:] [:lower:]"
 alias uppercase="tr [:lower:] [:upper:]"
+alias lower=lowercase
+alias upper=uppercase
 
 if type uniq > /dev/null 2> /dev/null; then
 	printf "" # No-op
