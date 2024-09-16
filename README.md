@@ -8,7 +8,7 @@ Intellij IDEA theme: [Darcula Pitch Black](https://plugins.jetbrains.com/plugin/
 ## Home folder structure
 ```
 ~/dotfiles   github.com/kivattt/dotfiles
-~/tutils     github.com/kivattt/tutils
+~/tutils2    github.com/kivattt/tutils2
 ~/fen        github.com/kivattt/fen
 ~/rainbowize github.com/kivattt/rainbowize
 
