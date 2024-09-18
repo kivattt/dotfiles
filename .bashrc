@@ -54,6 +54,7 @@ alias r="ranger"
 alias gs="git status"
 alias gd="git diff"
 alias gds="git diff --staged"
+alias xpidof="xprop _NET_WM_PID | awk '\$NF != \"found.\"{print \$NF}'"
 
 alias octave="octave --force-gui"
 
