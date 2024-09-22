@@ -3,7 +3,10 @@
 
 Use `lxappearance` to customize system-wide GTK theme (requires restarting to show up in firefox, pavucontrol etc.)
 
-Intellij IDEA theme: [Darcula Pitch Black](https://plugins.jetbrains.com/plugin/14059-darcula-pitch-black)
+## Intellij IDEA settings
+Theme: [Darcula Pitch Black](https://plugins.jetbrains.com/plugin/14059-darcula-pitch-black)\
+File -> Settings -> Appearance & Behavior -> Appearance -> Tick off "Show main menu in separate toolbar"\
+File -> Settings -> General, scroll down to "On Save", untick "Remove trailing spaces on: ...", it makes commits unreadable
 
 ## Home folder structure
 ```
