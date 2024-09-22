@@ -31,7 +31,6 @@ rm -rf ~/Downloads/JetBrainsMono
 ## Intellij IDEA settings
 Theme: [Darcula Pitch Black](https://plugins.jetbrains.com/plugin/14059-darcula-pitch-black)\
 File -> Settings -> Appearance & Behavior -> Appearance -> Tick off "Show main menu in separate toolbar"\
-File -> Settings -> General, scroll down to "On Save", untick "Remove trailing spaces on: ...", it makes commits unreadable
 
 ## Installing Go on Linux
 Based on https://go.dev/doc/install
