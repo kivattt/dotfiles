@@ -57,7 +57,7 @@ if fen.runtime_os == "windows" then
 end
 fen.bookmarks = {
 	[1] = fen.home_path .. "Downloads",
-	[2] = fen.home_path .. "Downloads/samples/best_everything",
+	[2] = fen.home_path .. "Downloads" .. pathSep .. "samples" .. pathSep .. "best_everything",
 	[3] = fen.home_path .. "Documents" .. pathSep .. "REAPER Media",
 	[4] = fen.home_path .. ".steam/debian-installation/steamapps/common/Team Fortress 2/tf/cfg",
 }
