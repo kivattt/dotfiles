@@ -36,6 +36,7 @@ everythingToPreviewWithFile = concat(everythingToPreviewWithFile, image)
 everythingToPreviewWithFile = concat(everythingToPreviewWithFile, archive)
 everythingToPreviewWithFile = concat(everythingToPreviewWithFile, document)
 
+--[[
 fen.preview = {
 	{script  = c.."show-nothing.lua",         match = secret},
 	{script  = c.."show-nothing.lua",         match = "pagemap"},
@@ -46,9 +47,10 @@ fen.preview = {
 	{program =    "file -b",                  match = everythingToPreviewWithFile},
 	{script  = c.."comments-and-strings.lua", match = "*"}
 }
+]]--
 
 fen.preview = {
-	{script  = c.."markdown.lua",             match = "*.md"},
+	{script  = c.."markdown.lua", match = "*.md"},
 }
 
 local pathSep = "/"
