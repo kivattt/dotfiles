@@ -16,6 +16,10 @@ Use `lxappearance` to customize system-wide GTK theme (requires restarting to sh
 ~/main/projects     Code projects, repos
 ```
 
+## Enabling 75hz on Asus monitor
+Just add `--rate 75` in `~/.screenlayout/main.sh` for the correct output\
+Google should permanently remove this from their search results: https://askubuntu.com/a/59626
+
 ## Installing the JetBrains Mono font (for XTerm and i3wm)
 ```console
 cd ~/Downloads
