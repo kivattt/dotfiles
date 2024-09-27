@@ -3,6 +3,7 @@ fen.show_hostname = false
 fen.sort_by = "modified"
 fen.always_show_info_numbers = true
 fen.scroll_speed = 3
+fen.split_home_end = true
 
 local function concat(a, b)
 	for _, v in ipairs(b) do
@@ -51,6 +52,9 @@ fen.preview = {
 
 fen.preview = {
 	{script  = c.."markdown.lua", match = "*.md"},
+	{script  = c.."toml.lua",                 match = {"*.toml", "*.lock"}},
+	{script  = c.."desktop.lua",              match = "*.desktop"},
+	{script  = c.."comments-and-strings.lua", match = "LICENSE"}
 }
 
 local pathSep = "/"
