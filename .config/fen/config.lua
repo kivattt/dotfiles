@@ -26,7 +26,6 @@ fen.open = {
 	{program = {"xviewer", "xdg-open", "feh"}, match = image},
 --	{program = {"feh", "xviewer", "xdg-open"}, match = image},
 	{program = "xdg-open", match = document},
---	{script = c.."open/archive.lua", match = archive},
 	{program = {"nvim -p", "vim -p", "vi -p"}, match = {"*"}}
 }
 
