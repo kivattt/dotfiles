@@ -65,4 +65,5 @@ fen.bookmarks = {
 	[2] = fen.home_path .. "Downloads" .. pathSep .. "samples" .. pathSep .. "best_everything",
 	[3] = fen.home_path .. "Documents" .. pathSep .. "REAPER Media",
 	[4] = fen.home_path .. ".steam/debian-installation/steamapps/common/Team Fortress 2/tf/cfg",
+	[10] = fen.config_path .. "config.lua",
 }
