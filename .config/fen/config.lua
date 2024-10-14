@@ -22,11 +22,11 @@ local document = {"*.pdf","*.epub","*.docx","*.doc","*.odg","*.fodg","*.otg"}
 local c = fen.config_path
 
 fen.open = {
-	{program = {"mpv", "vlc"}, match = concat(video, audio)},
+	{program = {"mpv --volume=80", "vlc"}, match = concat(video, audio)},
 	{program = {"xviewer", "xdg-open", "feh"}, match = image},
 --	{program = {"feh", "xviewer", "xdg-open"}, match = image},
 	{program = "xdg-open", match = document},
-	{program = {"nvim -p", "vim -p", "vi -p"}, match = {"*"}}
+	{program = {"nvim -p", "vim -p", "vi"}, match = {"*"}}
 }
 
 local everythingToPreviewWithFile = {"*.*~", "*.otg", "*.o", "*.otf", "*.ttf", "*.appimage", "*.vhd", "*.deb", "*.iso", "*.out", "*.exe", "*.class", "*.sqlite*", "fen"}
@@ -36,18 +36,18 @@ everythingToPreviewWithFile = concat(everythingToPreviewWithFile, image)
 everythingToPreviewWithFile = concat(everythingToPreviewWithFile, archive)
 everythingToPreviewWithFile = concat(everythingToPreviewWithFile, document)
 
---[[
-fen.preview = {
+--[[fen.preview = {
 	{script  = c.."show-nothing.lua",         match = secret},
 	{script  = c.."show-nothing.lua",         match = "pagemap"},
 	{script  = c.."markdown.lua",             match = "*.md"},
 	{script  = c.."toml.lua",                 match = {"*.toml", "*.lock"}},
 	{script  = c.."desktop.lua",              match = "*.desktop"},
 	{program =    "bash "..c.."video.bash",   match = video},
-	{program =    "file -b",                  match = everythingToPreviewWithFile},
+	{program =    "cat",                  match = everythingToPreviewWithFile},
+--	{program =    "file -b",                  match = everythingToPreviewWithFile},
 	{script  = c.."comments-and-strings.lua", match = "*"}
 }
-]]--
+--]]
 
 fen.preview = {
 	{script  = c.."markdown.lua", match = "*.md"},
