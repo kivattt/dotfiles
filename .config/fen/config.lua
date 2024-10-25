@@ -4,6 +4,7 @@ fen.sort_by = "modified"
 fen.always_show_info_numbers = true
 fen.scroll_speed = 3
 fen.split_home_end = true
+fen.git_status = true
 
 local function concat(a, b)
 	for _, v in ipairs(b) do
