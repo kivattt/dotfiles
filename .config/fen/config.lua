@@ -13,7 +13,6 @@ local function concat(a, b)
 	return a
 end
 
-local secret = {"*.key", "*.rk", "sitemanager.xml"}
 local video = {"*.mp4", "*.webm", "*.mkv", "*.mov", "*.avi", "*.flv"}
 local audio = {"*.wav", "*.flac", "*.mp3", "*.ogg", "*.m4a"}
 local image = {"*.png", "*.jpg", "*.jpeg", "*.jfif", "*.flif", "*.tiff", "*.gif", "*.webp", "*.bmp"}
@@ -23,9 +22,9 @@ local document = {"*.pdf","*.epub","*.docx","*.doc","*.odg","*.fodg","*.otg"}
 local c = fen.config_path
 
 fen.open = {
+	{program = {"darktable"}, match = {"*.ARW"}},
 	{program = {"mpv --volume=80", "vlc"}, match = concat(video, audio)},
 	{program = {"xviewer", "xdg-open", "feh"}, match = image},
---	{program = {"feh", "xviewer", "xdg-open"}, match = image},
 	{program = "xdg-open", match = document},
 	{program = {"nvim -p", "vim -p", "vi"}, match = {"*"}}
 }
@@ -37,24 +36,12 @@ everythingToPreviewWithFile = concat(everythingToPreviewWithFile, image)
 everythingToPreviewWithFile = concat(everythingToPreviewWithFile, archive)
 everythingToPreviewWithFile = concat(everythingToPreviewWithFile, document)
 
---[[fen.preview = {
-	{script  = c.."show-nothing.lua",         match = secret},
-	{script  = c.."show-nothing.lua",         match = "pagemap"},
-	{script  = c.."markdown.lua",             match = "*.md"},
-	{script  = c.."toml.lua",                 match = {"*.toml", "*.lock"}},
-	{script  = c.."desktop.lua",              match = "*.desktop"},
-	{program =    "bash "..c.."video.bash",   match = video},
-	{program =    "cat",                  match = everythingToPreviewWithFile},
---	{program =    "file -b",                  match = everythingToPreviewWithFile},
-	{script  = c.."comments-and-strings.lua", match = "*"}
-}
---]]
-
 fen.preview = {
-	{script  = c.."markdown.lua", match = "*.md"},
-	{script  = c.."toml.lua",                 match = {"*.toml", "*.lock"}},
-	{script  = c.."desktop.lua",              match = "*.desktop"},
-	{script  = c.."comments-and-strings.lua", match = "LICENSE"}
+	{script = c.."go.mod.lua",               match = "go.mod"},
+	{script = c.."markdown.lua",             match = "*.md"},
+	{script = c.."toml.lua",                 match = {"*.toml", "*.lock"}},
+	{script = c.."desktop.lua",              match = "*.desktop"},
+	{script = c.."comments-and-strings.lua", match = "LICENSE"}
 }
 
 local pathSep = "/"
