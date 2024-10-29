@@ -3,6 +3,8 @@
 
 Use `lxappearance` to customize system-wide GTK theme (requires restarting to show up in firefox, pavucontrol etc.)
 
+That one program I keep forgetting the name of: `sudo apt install binwalk`
+
 ## Home folder structure
 ```
 ~/dotfiles   github.com/kivattt/dotfiles
