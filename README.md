@@ -9,7 +9,6 @@ That one program I keep forgetting the name of: `sudo apt install binwalk`
 ```
 ~/dotfiles   github.com/kivattt/dotfiles
 ~/tutils2    github.com/kivattt/tutils2
-~/fen        github.com/kivattt/fen
 ~/rainbowize github.com/kivattt/rainbowize
 
 ~/main              The folder the terminal will start at
@@ -17,6 +16,10 @@ That one program I keep forgetting the name of: `sudo apt install binwalk`
 ~/main/etc/torrents Pirated movies/music
 ~/main/projects     Code projects, repos
 ```
+
+## Useful programs
+https://github.com/kivattt/arw-preview
+https://github.com/kivattt/fssize
 
 ## Enabling 75hz on Asus monitor
 Just add `--rate 75` in `~/.screenlayout/main.sh` for the correct output\

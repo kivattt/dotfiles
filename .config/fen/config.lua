@@ -22,7 +22,7 @@ local document = {"*.pdf","*.epub","*.docx","*.doc","*.odg","*.fodg","*.otg"}
 local c = fen.config_path
 
 fen.open = {
-	{program = {"darktable"}, match = {"*.ARW"}},
+	{program = {"arw-preview", "darktable"}, match = {"*.ARW"}},
 	{program = {"mpv --volume=80", "vlc"}, match = concat(video, audio)},
 	{program = {"xviewer", "xdg-open", "feh"}, match = image},
 	{program = "xdg-open", match = document},
