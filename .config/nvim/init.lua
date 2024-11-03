@@ -74,7 +74,7 @@ map("i", "<C-S-Tab>", "<Esc>gTi")
 
 map("i", "<C-s>", "<Esc>:w!<CR>a")
 map("i", "<C-q>", "<Esc>:q<CR>")
-map("i", "<C-d>", "<Esc>Vyp$i")
+map("i", "<C-d>", "<Esc>yyp$i")
 map("i", "<C-x>", "<Esc>Vda")
 map("i", "<C-t>", "<Esc>:tabnew ")
 
