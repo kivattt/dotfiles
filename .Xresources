@@ -36,7 +36,7 @@ XTerm.ttyModes: erase ^-
 
 ! yellow
 *.color3:       #d28b52
-*.color11:      #fff041
+*.color11:      #ffe641
 
 ! blue
 *.color4:       #4272a1
