@@ -37,6 +37,7 @@ everythingToPreviewWithFile = concat(everythingToPreviewWithFile, archive)
 everythingToPreviewWithFile = concat(everythingToPreviewWithFile, document)
 
 fen.preview = {
+	{script = c.."gitignore.lua",            match = ".gitignore"},
 	{script = c.."go.mod.lua",               match = "go.mod"},
 	{script = c.."markdown.lua",             match = "*.md"},
 	{script = c.."toml.lua",                 match = {"*.toml", "*.lock"}},
