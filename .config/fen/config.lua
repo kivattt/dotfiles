@@ -9,26 +9,25 @@ fen.git_status = true
 local video = {"*.mp4", "*.webm", "*.mkv", "*.mov", "*.avi", "*.flv"}
 local audio = {"*.wav", "*.flac", "*.mp3", "*.ogg", "*.m4a"}
 local image = {"*.png", "*.jpg", "*.jpeg", "*.jfif", "*.flif", "*.tiff", "*.gif", "*.webp", "*.bmp"}
-local document = {"*.pdf","*.epub","*.docx","*.doc","*.odg","*.fodg","*.otg"}
-
-local c = fen.config_path
+local document = {"*.pdf", "*.epub", "*.docx", "*.doc", "*.odg", "*.fodg", "*.otg"}
 
 fen.open = {
-	{program = {"arw-preview", "darktable"}, match = {"*.ARW"}},
-	{program = {"mpv", "vlc"}, match = video},
-	{program = {"mpv --volume=80", "vlc"}, match = audio},
+	{program = {"arw-preview", "darktable"},   match = "*.ARW"},
+	{program = {"mpv",             "vlc"},     match = video},
+	{program = {"mpv --volume=80", "vlc"},     match = audio},
 	{program = {"xviewer", "xdg-open", "feh"}, match = image},
-	{program = "xdg-open", match = document},
-	{program = {"nvim -p", "vim -p", "vi"}, match = {"*"}}
+	{program = "xdg-open",                     match = document},
+	{program = {"nvim -p", "vim -p", "vi"},    match = "*"}
 }
 
+local c = fen.config_path
 fen.preview = {
 	{script = c.."gitignore.lua",            match = ".gitignore"},
 	{script = c.."go.mod.lua",               match = "go.mod"},
 	{script = c.."markdown.lua",             match = "*.md"},
 	{script = c.."toml.lua",                 match = {"*.toml", "*.lock"}},
 	{script = c.."desktop.lua",              match = "*.desktop"},
-	{script = c.."comments-and-strings.lua", match = "LICENSE"}
+	{script = c.."comments-and-strings.lua", match = "LICENSE*"}
 }
 
 local pathSep = "/"
