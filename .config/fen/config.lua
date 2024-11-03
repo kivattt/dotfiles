@@ -6,35 +6,21 @@ fen.scroll_speed = 3
 fen.split_home_end = true
 fen.git_status = true
 
-local function concat(a, b)
-	for _, v in ipairs(b) do
-		table.insert(a, v)
-	end
-	return a
-end
-
 local video = {"*.mp4", "*.webm", "*.mkv", "*.mov", "*.avi", "*.flv"}
 local audio = {"*.wav", "*.flac", "*.mp3", "*.ogg", "*.m4a"}
 local image = {"*.png", "*.jpg", "*.jpeg", "*.jfif", "*.flif", "*.tiff", "*.gif", "*.webp", "*.bmp"}
-local archive = {"*.zip","*.jar","*.kra","*.tar.bz2","*.tb2","*.tbz","*.tbz2","*.tz2","*.tar.gz","*.taz","*.tgz","*.tar.lz","*.tar.lzma","*.tlz","*.tar.lzo","*.tar.xz","*.tZ","*.taZ","*.tar.zst","*.tzst","*.rar"}
 local document = {"*.pdf","*.epub","*.docx","*.doc","*.odg","*.fodg","*.otg"}
 
 local c = fen.config_path
 
 fen.open = {
 	{program = {"arw-preview", "darktable"}, match = {"*.ARW"}},
-	{program = {"mpv --volume=80", "vlc"}, match = concat(video, audio)},
+	{program = {"mpv", "vlc"}, match = video},
+	{program = {"mpv --volume=80", "vlc"}, match = audio},
 	{program = {"xviewer", "xdg-open", "feh"}, match = image},
 	{program = "xdg-open", match = document},
 	{program = {"nvim -p", "vim -p", "vi"}, match = {"*"}}
 }
-
-local everythingToPreviewWithFile = {"*.*~", "*.otg", "*.o", "*.otf", "*.ttf", "*.appimage", "*.vhd", "*.deb", "*.iso", "*.out", "*.exe", "*.class", "*.sqlite*", "fen"}
-everythingToPreviewWithFile = concat(everythingToPreviewWithFile, video)
-everythingToPreviewWithFile = concat(everythingToPreviewWithFile, audio)
-everythingToPreviewWithFile = concat(everythingToPreviewWithFile, image)
-everythingToPreviewWithFile = concat(everythingToPreviewWithFile, archive)
-everythingToPreviewWithFile = concat(everythingToPreviewWithFile, document)
 
 fen.preview = {
 	{script = c.."gitignore.lua",            match = ".gitignore"},
