@@ -11,19 +11,19 @@ That one program I keep forgetting the name of: `sudo apt install binwalk`
 ~/tutils2    github.com/kivattt/tutils2
 ~/rainbowize github.com/kivattt/rainbowize
 
-~/main              The folder the terminal will start at
+~/main              Where the terminal starts at
 ~/main/wallpapers   Desktop background images
 ~/main/etc/torrents Pirated movies/music
 ~/main/projects     Code projects, repos
 ```
 
 ## Useful programs
-https://github.com/kivattt/arw-preview
-https://github.com/kivattt/fssize
+[arw-preview](https://github.com/kivattt/arw-preview)\
+[fssize](https://github.com/kivattt/fssize)
 
-## Enabling 75hz on Asus monitor
-Just add `--rate 75` in `~/.screenlayout/main.sh` for the correct output\
-Google should permanently remove this from their search results: https://askubuntu.com/a/59626
+## Intellij IDEA settings
+Theme: [Darcula Pitch Black](https://plugins.jetbrains.com/plugin/14059-darcula-pitch-black)\
+File -> Settings -> Appearance & Behavior -> Appearance -> Tick off "Show main menu in separate toolbar"
 
 <details>
 <summary><h2>Installing the JetBrains Mono font (for XTerm and i3wm)</h2></summary>
@@ -39,9 +39,11 @@ rm -rf ~/Downloads/JetBrainsMono
 ```
 </details>
 
-## Intellij IDEA settings
-Theme: [Darcula Pitch Black](https://plugins.jetbrains.com/plugin/14059-darcula-pitch-black)\
-File -> Settings -> Appearance & Behavior -> Appearance -> Tick off "Show main menu in separate toolbar"
+<details>
+<summary><h2>Enabling 75hz on Asus monitor</h2></summary>
+Just add `--rate 75` in `~/.screenlayout/main.sh` for the correct output\
+Google should permanently remove this from their search results: https://askubuntu.com/a/59626
+</details>
 
 <details>
 <summary><h2>Installing Go on Linux</h2></summary>
@@ -52,13 +54,13 @@ Based on https://go.dev/doc/install
 cd ~/Downloads
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go*.linux-amd64.tar.gz
 ```
-</details>
 
 Now add this line to the end of `/etc/profile`:
 ```
 export PATH=$PATH:/usr/local/go/bin
 ```
 Log out (Alt+E in i3wm) then back in again, do `go version` to verify it successfully installed
+</details>
 
 <details>
 <summary><h2>Profiling C/C++ with valgrind + kcachegrind</h2></summary>
