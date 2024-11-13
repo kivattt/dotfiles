@@ -12,7 +12,7 @@ local image = {"*.png", "*.jpg", "*.jpeg", "*.jfif", "*.flif", "*.tiff", "*.gif"
 local document = {"*.pdf", "*.epub", "*.docx", "*.doc", "*.odg", "*.fodg", "*.otg"}
 
 fen.open = {
-	{program = {"arw-preview", "darktable"},   match = "*.ARW"},
+	{program = {"arw-preview", "darktable"},   match = {"*.ARW", "*.arw"}},
 	{program = {"mpv",             "vlc"},     match = video},
 	{program = {"mpv --volume=80", "vlc"},     match = audio},
 	{program = {"xviewer", "xdg-open", "feh"}, match = image},
