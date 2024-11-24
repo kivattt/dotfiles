@@ -12,7 +12,7 @@ bar {
 }
 
 # Set wallpaper
-exec_always feh --bg-fill ~/main/wallpapers/fox.jpg ~/main/wallpapers/fox.jpg
+exec_always feh --bg-fill ~/main/wallpapers/_DSC2803.png ~/main/wallpapers/fox.jpg
 
 exec_always xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 

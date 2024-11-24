@@ -88,8 +88,8 @@ if test -d $tutils2path; then
 	# Overriding the previous ls aliases since tutils2 ls doesn't work with the same arguments
 	alias l="$tutils2path/ls -d --sort-by=modified"
 	alias sl="$tutils2path/ls --all -d --sort-by=modified"
-	alias cls="clear; $tutils2path/ls -d --sort-by=modified"
-	alias csl="clear; $tutils2path/ls --all -d --sort-by=modified"
+	alias cls="clear; $tutils2path/ls --directories-first --sort-by=modified"
+	alias csl="clear; $tutils2path/ls --all --directories-first --sort-by=modified"
 
 else
 	echo "Could not find tutils2 programs in $tutils2path"
@@ -105,7 +105,10 @@ fi
 #------------------------#
 alias krita="~/Downloads/krita-5.2.3-x86_64.appimage"
 alias idea="~/Downloads/idea-IC-242.20224.300/bin/idea"
+alias ideaultimate="~/Downloads/idea-IU-242.22855.74/bin/idea"
+alias rider="~/Downloads/JetBrains\\ Rider-2024.2.7/bin/rider"
 #alias audacity="~/Downloads/audacity-linux-3.4.2-x64.AppImage"
 alias discord="~/Downloads/discord/Discord/Discord"
 alias re="~/Downloads/MultiMC/MultiMC"
 alias blender="/home/kivah/Downloads/blender-4.2.1-linux-x64/blender"
+alias onefetch="~/Downloads/onefetch"
