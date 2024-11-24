@@ -21,9 +21,12 @@ That one program I keep forgetting the name of: `sudo apt install binwalk`
 [arw-preview](https://github.com/kivattt/arw-preview)\
 [fssize](https://github.com/kivattt/fssize)
 
-## Intellij IDEA settings
+<details>
+<summary>Intellij IDEA settings</summary>
+
 Theme: [Darcula Pitch Black](https://plugins.jetbrains.com/plugin/14059-darcula-pitch-black)\
 File -> Settings -> Appearance & Behavior -> Appearance -> Tick off "Show main menu in separate toolbar"
+</details>
 
 <details>
 <summary>Installing the JetBrains Mono font (for XTerm and i3wm)</summary>
