@@ -69,6 +69,19 @@ Log out (Alt+E in i3wm) then back in again, do `go version` to verify it success
 </details>
 
 <details>
+<summary>Building the JUCE Projucer on Linux</summary>
+
+The prebuilt downloads for Linux require a specific newer glibc version to run, so they don't work on Linux Mint 21.3
+```bash
+git clone https://github.com/juce-framework/JUCE
+cd JUCE/extras/Projucer/Builds/LinuxMakefile
+make
+cd build
+./Projucer
+```
+</details>
+
+<details>
 <summary>Profiling C/C++ with valgrind + kcachegrind</summary>
 
 ```bash
