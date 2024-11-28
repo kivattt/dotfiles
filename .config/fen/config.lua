@@ -27,7 +27,7 @@ fen.preview = {
 	{script = c.."markdown.lua",             match = "*.md"},
 	{script = c.."toml.lua",                 match = {"*.toml", "*.lock"}},
 	{script = c.."desktop.lua",              match = "*.desktop"},
-	{script = c.."comments-and-strings.lua", match = "LICENSE*"}
+	{script = c.."comments-and-strings.lua", match = {"LICENSE*", "COPYING*"}}
 }
 
 local pathSep = "/"

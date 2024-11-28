@@ -86,8 +86,8 @@ if test -d $tutils2path; then
 	alias countchars="$tutils2path/countchars"
 
 	# Overriding the previous ls aliases since tutils2 ls doesn't work with the same arguments
-	alias l="$tutils2path/ls -d --sort-by=modified"
-	alias sl="$tutils2path/ls --all -d --sort-by=modified"
+	alias l="$tutils2path/ls --directories-first --sort-by=modified"
+	alias sl="$tutils2path/ls --all --directories-first --sort-by=modified"
 	alias cls="clear; $tutils2path/ls --directories-first --sort-by=modified"
 	alias csl="clear; $tutils2path/ls --all --directories-first --sort-by=modified"
 
