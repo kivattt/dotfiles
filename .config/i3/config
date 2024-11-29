@@ -50,6 +50,7 @@ bindsym $sup+q kill
 bindsym $sup+i exec sleep 0.25 && xdotool keydown Shift && xdotool keydown Insert && sleep 0.2 && xdotool keyup Insert && xdotool keyup Shift
 bindsym $sup+Shift+e exec i3-sensible-terminal
 bindsym --release Print exec "scrot -s /tmp/screenshot.png -e 'xclip -selection clipboard -t \\"image/png\\" < $f'; rm /tmp/screenshot.png"
+bindsym --release XF86Calculator exec "scrot -s /tmp/screenshot.png -e 'xclip -selection clipboard -t \\"image/png\\" < $f'; rm /tmp/screenshot.png"
 
 # Move focused window
 bindsym $sup+Left move left
