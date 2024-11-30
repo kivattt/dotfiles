@@ -132,3 +132,11 @@ xhost + # This is required to allow root to connect to X11
 sudo ./vtune-gui
 ```
 </details>
+
+<details>
+<summary>Getting Ghidra to run</summary>
+
+```bash
+sudo apt install openjdk-21-jdk
+```
+</details>
