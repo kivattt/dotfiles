@@ -86,7 +86,7 @@ map("n", "<C-k>", vim.diagnostic.goto_prev)
 ]] --
 local fen = require("fen")
 fen.setup({
-	no_write = false
+	disable_no_write = true
 })
 map("n", "<Leader>f", fen.show)
 
