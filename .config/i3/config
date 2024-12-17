@@ -16,6 +16,9 @@ exec_always feh --bg-fill ~/main/wallpapers/_DSC2467_01.png ~/main/wallpapers/fo
 
 exec_always xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
+# Set Norwegian (NO) keyboard layout
+exec_always setxkbmap no
+
 # Set keyboard repeat delay rate to faster
 exec_always xset r rate 300 40
 exec_always xrdb ~/.Xresources
