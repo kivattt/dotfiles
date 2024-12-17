@@ -162,12 +162,13 @@ func toInt(raw string) int {
 	return res
 }
 
-func ReadMemoryStats() Memory {
+func ReadMemoryStats() (Memory, error) {
 	file, err := os.Open("/proc/meminfo")
 	if err != nil {
-		panic(err)
+		return Memory{}, err
 	}
 	defer file.Close()
+
 	bufio.NewScanner(file)
 	scanner := bufio.NewScanner(file)
 	res := Memory{}
@@ -188,7 +189,7 @@ func ReadMemoryStats() Memory {
 			res.MemShmem = value
 		}
 	}
-	return res
+	return res, nil
 }
 
 var whiteTextColor = "#dddddd"
@@ -232,7 +233,13 @@ func main() {
 
 		disks, err := DisksNameAndSizeAndMountPoints()
 		if err != nil {
-			panic(err)
+			disks = [][3]string{
+				{
+					"disk",
+					"250000000000", // 250 GB max space as a placeholder
+					"/",
+				},
+			}
 		}
 		for _, disk := range disks {
 			bytesMax, _ := strconv.Atoi(disk[1])
@@ -250,18 +257,20 @@ func main() {
 			textList = append(textList, "<span foreground=\""+dimTextColor+"\">"+disk[0]+":</span> <span foreground=\""+diskFreeColor+"\">"+BytesToHumanReadableUnitString(bytesFree, 1)+"</span>")
 		}
 
-		memory := ReadMemoryStats()
-		usedMem := (memory.MemTotal - memory.MemAvailable) * 1000
-		totalMem := memory.MemTotal * 1000
-
 		memoryColor := whiteTextColor
-		if float32(usedMem)/float32(totalMem) > 0.95 {
-			memoryColor = "#ff0000"
-		} else if float32(usedMem)/float32(totalMem) > 0.85 {
-			memoryColor = "#ffff00"
-		}
+		memory, err := ReadMemoryStats()
+		if err == nil {
+			usedMem := (memory.MemTotal - memory.MemAvailable) * 1000
+			totalMem := memory.MemTotal * 1000
 
-		textList = append(textList, "RAM: "+BytesToHumanReadableUnitString(uint64(usedMem), 1)+"/"+BytesToHumanReadableUnitString(uint64(totalMem), 1))
+			if float32(usedMem)/float32(totalMem) > 0.95 {
+				memoryColor = "#ff0000"
+			} else if float32(usedMem)/float32(totalMem) > 0.85 {
+				memoryColor = "#ffff00"
+			}
+
+			textList = append(textList, "RAM: "+BytesToHumanReadableUnitString(uint64(usedMem), 1)+"/"+BytesToHumanReadableUnitString(uint64(totalMem), 1))
+		}
 
 		now := time.Now()
 		textList = append(textList, dateText(now))
