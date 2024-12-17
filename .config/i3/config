@@ -14,8 +14,8 @@ bar {
 # Set wallpaper
 exec_always feh --bg-fill ~/main/wallpapers/_DSC2467_01.png ~/main/wallpapers/fox.jpg
 
-# Set Norwegian (NO) keyboard layout
-exec_always setxkbmap no
+# Set Norwegian (NO) keyboard layout (this breaks the Caps Lock -> Escape keymap...)
+#exec_always setxkbmap no
 exec_always xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 # Set keyboard repeat delay rate to faster
