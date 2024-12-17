@@ -38,7 +38,17 @@ cd JetBrainsMono
 wget https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip
 unzip JetBrainsMono-2.304.zip
 mv fonts/ttf fonts/JetBrainsMono
+```
+
+On Linux:
+```
 sudo cp -r fonts/JetBrainsMono /usr/share/fonts/truetype
+rm -rf ~/Downloads/JetBrainsMono
+```
+
+On FreeBSD:
+```
+sudo cp fonts/JetBrainsMono/* ~/.fonts
 rm -rf ~/Downloads/JetBrainsMono
 ```
 </details>
