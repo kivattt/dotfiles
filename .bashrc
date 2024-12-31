@@ -84,6 +84,7 @@ if test -d $tutils2path; then
 	alias xxd="$tutils2path/xxd"
 	alias ascii="$tutils2path/ascii"
 	alias countchars="$tutils2path/countchars"
+	alias bytes="$tutils2path/bytes"
 
 	# Overriding the previous ls aliases since tutils2 ls doesn't work with the same arguments
 	alias l="$tutils2path/ls --directories-first --sort-by=modified"
