@@ -104,8 +104,8 @@ fi
 #------------------------#
 # Cursed program aliases #
 #------------------------#
-alias krita="~/Downloads/krita-5.2.3-x86_64.appimage"
-alias idea="~/Downloads/idea-IC-242.20224.300/bin/idea"
+alias krita="~/Downloads/krita-5.2.6-x86_64.appimage"
+alias idea="~/Downloads/idea-IC-243.22562.218/bin/idea"
 alias ideaultimate="~/Downloads/idea-IU-242.22855.74/bin/idea"
 alias rider="~/Downloads/JetBrains\\ Rider-2024.2.7/bin/rider"
 #alias audacity="~/Downloads/audacity-linux-3.4.2-x64.AppImage"

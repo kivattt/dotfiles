@@ -29,9 +29,8 @@ vim.call("plug#end")
 --[[
 	OPTIONS
 ]] --
---vim.cmd "colorscheme desert"
---vim.cmd "colorscheme industry"
-vim.cmd "colorscheme vim"
+-- Doesn't work since Linux Mint 22
+--vim.cmd "colorscheme vim"
 
 -- For some reason I can't set the color specifically, but this resets the background color of popups
 vim.cmd "hi NormalFloat guibg=None"
