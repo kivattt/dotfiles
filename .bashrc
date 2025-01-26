@@ -1,3 +1,13 @@
+export EDITOR=nvim
+
+stty erase \^H
+
+# Make Ctrl+s not freeze the terminal
+[[ $- == *i* ]] && stty -ixon
+
+clear
+cd ~/main
+
 git_branch() {
 	git branch --show-current 2> /dev/null
 }
@@ -8,16 +18,8 @@ if test -x $rainbowizepath/rainbowize; then
 	export PS1="\[\033[1m\]$(~/rainbowize/rainbowize -fn $USER) \[\033[0m\]\w \[\033[0;35m\]\$(git_branch)\n\[\033[0;31m\033[0m\]\[\033[0;37m\]$\[\033[0m\] "
 else
 	export PS1="\[\033[0;32m\]\u \[\033[0m\]\w \[\033[0;35m\]\$(git_branch)\n\[\033[0;31m\033[0m\]\[\033[0;37m\]$\[\033[0m\] "
+	echo -e "\e[0;31mrainbowize missing! Install: https://github.com/kivattt/rainbowize"
 fi
-export EDITOR=nvim
-
-stty erase \^H
-
-# Make Ctrl+s not freeze the terminal
-[[ $- == *i* ]] && stty -ixon
-
-clear
-cd ~/main
 
 #---------#
 # Aliases #
@@ -105,7 +107,7 @@ fi
 # Cursed program aliases #
 #------------------------#
 alias krita="~/Downloads/krita-5.2.6-x86_64.appimage"
-alias idea="~/Downloads/idea-IC-243.22562.218/bin/idea"
+alias idea="~/Downloads/idea-IC-243.23654.117/bin/idea"
 alias ideaultimate="~/Downloads/idea-IU-242.22855.74/bin/idea"
 alias rider="~/Downloads/JetBrains\\ Rider-2024.2.7/bin/rider"
 #alias audacity="~/Downloads/audacity-linux-3.4.2-x64.AppImage"
