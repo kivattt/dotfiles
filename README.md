@@ -62,6 +62,7 @@ Google should permanently remove this from their search results: https://askubun
 
 <details>
 <summary>Fixing monitor not recognized/flickering every 5 sec</summary>
+
 Remove `--rate 75` from `~/screenlayout/main.sh`, run it, put back `--rate 75` and run it again.
 </details>
 
