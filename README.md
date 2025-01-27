@@ -61,6 +61,11 @@ Google should permanently remove this from their search results: https://askubun
 </details>
 
 <details>
+<summary>Fixing monitor not recognized/flickering every 5 sec</summary>
+Remove `--rate 75` from `~/screenlayout/main.sh`, run it, put back `--rate 75` and run it again.
+</details>
+
+<details>
 <summary>Installing Go on Linux</summary>
 
 Based on https://go.dev/doc/install
