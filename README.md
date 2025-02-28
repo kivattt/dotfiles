@@ -40,13 +40,13 @@ unzip JetBrainsMono-2.304.zip
 mv fonts/ttf fonts/JetBrainsMono
 ```
 
-On Linux:
+Now, on Linux:
 ```
 sudo cp -r fonts/JetBrainsMono /usr/share/fonts/truetype
 rm -rf ~/Downloads/JetBrainsMono
 ```
 
-On FreeBSD:
+Otherwise, on FreeBSD:
 ```
 sudo cp fonts/JetBrainsMono/* ~/.fonts
 rm -rf ~/Downloads/JetBrainsMono
