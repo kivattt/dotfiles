@@ -157,6 +157,7 @@ gotoPreview.setup({
 local lspconfig = require("lspconfig")
 lspconfig.gopls.setup({})         -- Go
 --lspconfig.clangd.setup({})      -- C/C++
+lspconfig.ols.setup({})           -- Odin
 lspconfig.ocamllsp.setup({})      -- OCaml
 lspconfig.jdtls.setup({})         -- Java (Requires Java 17+ to be used, tldr: `sudo update-alternatives --config java`)
 lspconfig.rust_analyzer.setup({}) -- Rust
