@@ -25,7 +25,7 @@ That one program I keep forgetting the name of: `sudo apt install binwalk`
 <summary>Intellij IDEA settings</summary>
 
 Theme: [Darcula Pitch Black](https://plugins.jetbrains.com/plugin/14059-darcula-pitch-black)\
-File -> Settings -> Appearance & Behavior -> Appearance -> Tick off "Show main menu in separate toolbar"
+File -> Settings -> Appearance & Behavior -> Appearance -> Click to enable "Show main menu in separate toolbar"
 </details>
 
 <details>
