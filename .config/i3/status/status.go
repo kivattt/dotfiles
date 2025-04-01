@@ -109,7 +109,15 @@ func DisksNameAndSizeAndMountPoints() ([][3]string, error) {
 func dateText(now time.Time) string {
 	left := now.Format("Mon Jan 2")
 	right := now.Format("2006-01-02")
-	return "<span foreground=\"" + dimTextColor + "\">" + left + "</span> " + right
+
+	color := dimTextColor
+	// Check for april fools day
+	if strings.HasSuffix(left, "Apr 1") || strings.HasSuffix(left, "Mar 31") {
+		//color = "#ff0000"
+		color = "#9f3efa"
+	}
+
+	return "<span foreground=\"" + color + "\">" + left + "</span> " + right
 }
 
 func timeText(now time.Time) string {
