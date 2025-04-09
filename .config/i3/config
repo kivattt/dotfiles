@@ -12,7 +12,7 @@ bar {
 }
 
 # Set wallpaper
-exec_always feh --bg-fill ~/main/wallpapers/_DSC2467_01.png ~/main/wallpapers/fox.jpg
+exec_always feh --bg-fill ~/main/wallpapers/bg.png
 
 # Set Norwegian (NO) keyboard layout (this breaks the Caps Lock -> Escape keymap...)
 #exec_always setxkbmap no
@@ -26,7 +26,7 @@ exec_always xrdb ~/.Xresources
 exec_always ~/.screenlayout/main.sh
 
 # Map wacom tablet to main monitor
-exec_always xsetwacom set "Wacom Cintiq 16 Pen stylus" maptooutput DP-2
+exec_always xsetwacom set "Wacom Cintiq 16 Pen stylus" maptooutput HDMI-1
 
 # Set mod keys
 set $sup Mod4
@@ -91,6 +91,7 @@ for_window [all] title_window_icon padding 3
 
 # Make windows opened by GNU Octave float
 for_window [title="Figure *"] floating enable
+for_window [title="ui test"] floating enable
 
 # Color                 border  backgr. text    indica. child_border
 client.focused          #040426 #000000 #ffffff #040426 #040426
@@ -113,6 +114,11 @@ bindsym $sup+Ctrl+Right resize shrink width 25 px or 1 ppt
 bindsym $sup+Ctrl+Up    resize grow height 25 px or 1 ppt
 bindsym $sup+Ctrl+Down  resize shrink height 25 px or 1 ppt
 bindsym $sup+Ctrl+Left  resize grow width 25 px or 1 ppt
+
+#bindsym $sup+Ctrl+Up    resize grow height   1 px
+#bindsym $sup+Ctrl+Down  resize shrink height 1 px
+#bindsym $sup+Ctrl+Left  resize grow width    1 px
+#bindsym $sup+Ctrl+Right resize shrink width  1 px
 
 # Switch to workspace
 bindsym $sup+1 workspace 1
