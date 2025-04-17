@@ -1,6 +1,6 @@
 ## My configuration files
-`autoexec.cfg` is a config file for Team Fortress 2\
-`config.cfg` is a config file for Counter-Strike 2
+`tf2-config/autoexec.cfg` is a config file for Team Fortress 2\
+`cs2-config/autoexec.cfg` is a config file for Counter-Strike 2
 
 Use `lxappearance` to customize system-wide GTK theme (requires restarting to show up in firefox, pavucontrol etc.)
 
