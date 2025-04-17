@@ -19,7 +19,7 @@ That one program I keep forgetting the name of: `sudo apt install binwalk`
 ```
 
 ## Useful programs
-[arw-preview](https://github.com/kivattt/arw-preview)\
+[arw-preview2](https://github.com/kivattt/arw-preview2)\
 [fssize](https://github.com/kivattt/fssize)
 
 <details>
