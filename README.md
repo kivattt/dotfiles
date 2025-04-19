@@ -1,6 +1,7 @@
 ## My configuration files
 `tf2-config/autoexec.cfg` is a config file for Team Fortress 2\
 `cs2-config/autoexec.cfg` is a config file for Counter-Strike 2
+Copy the `kiva-vital-presets` into `~/.local/share/vital` to get the Vital synth presets
 
 Use `lxappearance` to customize system-wide GTK theme (requires restarting to show up in firefox, pavucontrol etc.)
 
