@@ -19,10 +19,6 @@ That one program I keep forgetting the name of: `sudo apt install binwalk`
 ~/main/projects     Code projects, repos
 ```
 
-## Useful programs
-[arw-preview2](https://github.com/kivattt/arw-preview2)\
-[fssize](https://github.com/kivattt/fssize)
-
 <details>
 <summary>Intellij IDEA settings</summary>
 
@@ -53,6 +49,15 @@ Otherwise, on FreeBSD:
 sudo cp fonts/JetBrainsMono/* ~/.fonts
 rm -rf ~/Downloads/JetBrainsMono
 ```
+</details>
+
+<details>
+<summary>Firefox extensions</summary>
+
+[uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)\
+[SponsorBlock](https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/)\
+[Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader/)\
+[Return YouTube Dislike](https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislikes/)
 </details>
 
 <details>
