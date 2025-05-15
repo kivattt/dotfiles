@@ -30,7 +30,8 @@ vim.call("plug#end")
 	OPTIONS
 ]] --
 -- Doesn't work since Linux Mint 22
---vim.cmd "colorscheme vim"
+-- NEVERMIND IT WORKS AGAIN on NVIM v0.11.1 (and is required to prevent a terrible colorscheme)
+vim.cmd "colorscheme vim"
 
 -- For some reason I can't set the color specifically, but this resets the background color of popups
 vim.cmd "hi NormalFloat guibg=None"
