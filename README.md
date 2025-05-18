@@ -186,6 +186,7 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 <details>
 <summary>Color blend functions</summary>
+
 OpenGL default blend mode recreation (correct color blending, works with default OpenGL blending)
 ```glsl
 // Disclaimer: this function was written by Github Copilot
