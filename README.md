@@ -183,3 +183,34 @@ Then add to .bashrc
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 ```
 </details>
+
+<details>
+<summary>Color blend functions</summary>
+OpenGL default blend mode recreation (correct color blending, works with default OpenGL blending)
+```glsl
+// Disclaimer: this function was written by Github Copilot
+vec4 blend(vec4 src, vec4 dst) {
+    float outAlpha = src.a + dst.a * (1.0 - src.a);
+    vec3 outColor = (src.rgb * src.a + dst.rgb * dst.a * (1.0 - src.a)) / max(outAlpha, 1e-6);
+    return vec4(outColor, outAlpha);
+}
+```
+
+Alpha Multiply (correct standalone color blending, but doesn't match well when combined with default OpenGL blending)
+```glsl
+vec4 alphaMultiply(vec4 src, vec4 dst) {
+    vec4 res;
+    res.r = dst.r * (1 - src.a) + src.r * src.a;
+    res.g = dst.g * (1 - src.a) + src.g * src.a;
+    res.b = dst.b * (1 - src.a) + src.b * src.a;
+    res.a = dst.a * (1 - src.a) + src.a;
+
+    return res;
+}
+```
+
+Mix (terrible, awful, never use this.)
+```glsl
+mix(dst, src, src.a);
+```
+</details>
