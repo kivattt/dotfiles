@@ -199,7 +199,7 @@ vec4 blend(vec4 src, vec4 dst) {
 }
 ```
 
-Alpha Multiply (correct standalone color blending, but doesn't match well when combined with default OpenGL blending)
+Alpha Multiply (correct standalone color blending(?), but doesn't match well when combined with default OpenGL blending)
 ```glsl
 vec4 alphaMultiply(vec4 src, vec4 dst) {
     vec4 res;
