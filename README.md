@@ -185,7 +185,7 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 </details>
 
 <details>
-<summary>Color blend functions</summary>
+<summary>GLSL Color blend functions</summary>
 
 <img src="color-blend-functions.png" width="70%"></img>
 
