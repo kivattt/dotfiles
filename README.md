@@ -24,7 +24,7 @@ That one program I keep forgetting the name of: `sudo apt install binwalk`
 
 Remember to install:\
 ```
-sudo apt install swaylock grim slurp
+sudo apt install swaylock grim slurp wl-clipboard
 ```
 
 `arandr` alternative: `sudo apt install wdisplays`\
