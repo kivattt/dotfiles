@@ -20,6 +20,11 @@ That one program I keep forgetting the name of: `sudo apt install binwalk`
 ```
 
 <details>
+<summary>Sway / Wayland shenanigans</summary>
+`arandr` alternative: `sudo apt install wdisplays`
+</details>
+
+<details>
 <summary>Intellij IDEA settings</summary>
 
 Theme: [Darcula Pitch Black](https://plugins.jetbrains.com/plugin/14059-darcula-pitch-black)\
