@@ -21,7 +21,8 @@ That one program I keep forgetting the name of: `sudo apt install binwalk`
 
 <details>
 <summary>Sway / Wayland shenanigans</summary>
-`arandr` alternative: `sudo apt install wdisplays`
+`arandr` alternative: `sudo apt install wdisplays`\
+`xev` alternative: `sudo apt install wev`
 </details>
 
 <details>
