@@ -9,6 +9,7 @@ bar {
 	position bottom
 	status_command ~/.config/sway/status/status
 	tray_padding 1
+	workspace_min_width 22
 }
 
 input * {
@@ -89,7 +90,13 @@ for_window {
 	# Make windows opened by GNU Octave float
 	[title="Figure *"] floating enable
 
+	[title="Add FX to:*"] floating enable
+	[title="FX:*"] floating enable
+	[title="Insert Virtual Instrument on New Track..."] floating enable
+	[title="Media Item Properties"] floating enable
+
 	[title="ui test"] floating enable
+	[title="Odin GLFW*"] floating enable
 }
 
 # Color                 border  backgr. text    indica. child_border
