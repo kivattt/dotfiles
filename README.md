@@ -33,6 +33,9 @@ sudo apt install swaylock grim slurp wl-clipboard jq
 Installing OBS studio:
 ```
 sudo apt install pipewire xdg-desktop-portal xdg-desktop-portal-wlr
+sudo apt remove xdg-desktop-portal-gtk
+systemctl reboot # Reboot the computer at this point
+./run_sway.sh # Starts sway with `XDG_CURRENT_DESKTOP=sway`
 ```
 </details>
 

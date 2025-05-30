@@ -20,7 +20,8 @@ input * {
 
 input "type:keyboard" xkb_options caps:escape
 
-output "*" bg wallpapers/fox.jpg fill
+#output "*" bg wallpapers/fox.jpg fill
+output "*" bg wallpapers/_DSC2480.jpg fill
 output HDMI-A-1 pos 0 0 res 2560x1440@75.002Hz
 output eDP-1 pos 2560 700 res 1920x1080@60.038Hz
 
@@ -29,6 +30,9 @@ seat seat0 xcursor_theme Adwaita 10
 default_border pixel 10
 
 exec_always xrdb ~/.Xdefaults
+exec --no-startup-id dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec --no-startup-id xdg-desktop-portal-wlr &
+exec --no-startup-id xdg-desktop-portal -r
 
 # Map wacom tablet to main monitor
 #exec_always xsetwacom set "Wacom Cintiq 16 Pen stylus" maptooutput DP-2
@@ -94,6 +98,9 @@ for_window {
 	[title="FX:*"] floating enable
 	[title="Insert Virtual Instrument on New Track..."] floating enable
 	[title="Media Item Properties"] floating enable
+	[title="Finished in*"] floating enable
+	[title="JS:*"] floating enable
+	[title="VST:*"] floating enable
 
 	[title="ui test"] floating enable
 	[title="Odin GLFW*"] floating enable
