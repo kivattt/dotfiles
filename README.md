@@ -32,7 +32,7 @@ sudo apt install swaylock grim slurp wl-clipboard jq
 
 Installing OBS studio:
 ```
-sudo apt install pipewire xdg-desktop-portal-wlr
+sudo apt install pipewire xdg-desktop-portal xdg-desktop-portal-wlr
 ```
 </details>
 
