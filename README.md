@@ -64,6 +64,23 @@ rm -rf ~/Downloads/JetBrainsMono
 </details>
 
 <details>
+<summary>Installing SDL3 on Linux</summary>
+
+Follow the instructions here: https://glusoft.com/sdl3-tutorials/install-sdl3-linux
+```
+unzip SDL3-3.2.14.zip # Download from https://github.com/libsdl-org/SDL/releases
+
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+
+# Now, copy the like /usr/local/lib .so files/symlinks to the working directory where you run your sdl3 program from
+```
+</details>
+
+<details>
 <summary>Firefox extensions</summary>
 
 [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)\
