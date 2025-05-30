@@ -29,6 +29,11 @@ sudo apt install swaylock grim slurp wl-clipboard jq
 
 `arandr` alternative: `sudo apt install wdisplays`\
 `xev` alternative: `sudo apt install wev`
+
+Installing OBS studio:
+```
+sudo apt install pipewire xdg-desktop-portal-wlr
+```
 </details>
 
 <details>
