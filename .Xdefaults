@@ -19,7 +19,8 @@ XTerm.ttyModes: erase ^-
 
 ! special
 *.foreground:   #cad0d1
-*.background:   #101017
+!*.background:   #101017
+*.background:   #111114
 *.cursorColor:  #cad0d1
 
 ! black
@@ -59,6 +60,6 @@ XTerm.vt100.faceName: JetBrains Mono:size=10.5:antialias=true
 XTerm.vt100.renderFont: true
 
 ! X11
-Xcursor.size: 16
+Xcursor.size: 6
 *dpi: 98
 !Xft.dpi: 110
