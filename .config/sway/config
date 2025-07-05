@@ -54,6 +54,7 @@ bindsym $sup+q kill
 bindsym $sup+i exec sleep 0.25 && xdotool keydown Shift && xdotool keydown Insert && sleep 0.2 && xdotool keyup Insert && xdotool keyup Shift
 
 bindsym $sup+Shift+e exec i3-sensible-terminal
+bindsym $sup+Shift+r exec gnome-terminal
 
 bindsym XF86Calculator exec grim -g "$(slurp -d)" - | wl-copy
 bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
@@ -101,8 +102,10 @@ for_window {
 	[title="Finished in*"] floating enable
 	[title="JS:*"] floating enable
 	[title="VST:*"] floating enable
+	[title="Plug-in pin connector"] floating enable
 
 	[title="ui test"] floating enable
+	[title="sinc"] floating enable
 	[title="Odin GLFW*"] floating enable
 }
 
