@@ -29,13 +29,7 @@ vim.call("plug#end")
 --[[
 	OPTIONS
 ]] --
--- Doesn't work since Linux Mint 22
--- Nevermind, works if you install latest version...
-vim.cmd "colorscheme vim"
-
--- For some reason I can't set the color specifically, but this resets the background color of popups
-vim.cmd "hi NormalFloat guibg=None"
-vim.cmd "hi Pmenu ctermbg=Gray"
+vim.cmd "colorscheme mytheme"
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
