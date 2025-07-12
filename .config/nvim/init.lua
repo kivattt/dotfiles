@@ -47,6 +47,7 @@ vim.cmd "set mps+=<:>"
 vim.cmd "set splitright"
 vim.opt.title = true
 vim.cmd "set titlestring=%Y\\ %t%(\\ %M%)%(\\ (%{expand(\\\"%:~:.:h\\\")})%)%(\\ %a%)"
+vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true} })
 
 -- Restore cursor at last position, from: https://github.com/neovim/neovim/issues/16339#issuecomment-1457394370
 vim.api.nvim_create_autocmd('BufRead', {
