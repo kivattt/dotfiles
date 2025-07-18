@@ -2,7 +2,7 @@ fen.show_help_text = false
 fen.show_hostname = false
 fen.sort_by = "modified"
 fen.always_show_info_numbers = true
-fen.scroll_speed = 3
+fen.scroll_speed = 4
 fen.split_home_end = true
 fen.git_status = true
 
