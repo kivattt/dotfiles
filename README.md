@@ -202,7 +202,7 @@ sudo ./vtune-gui
 
 ```go
 import (
-    "github.com/kivattt/gogitstatus"
+    "github.com/pkg/profile"
 )
 
 func main() {
