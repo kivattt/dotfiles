@@ -226,8 +226,10 @@ import (
     "runtime/debug"
 )
 
-// 100 is the default. Lower = more frequent GC = lower memory usage
-debug.SetGCPercent(75)
+func main() {
+    // 100 is the default. Lower = more frequent GC = lower memory usage
+    debug.SetGCPercent(75)
+}
 ```
 
 Details: https://go.dev/doc/gc-guide#Memory_limit
