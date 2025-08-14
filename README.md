@@ -219,6 +219,18 @@ func main() {
 </details>
 
 <details>
+<summary>Tuning the Golang garbage collector</summary>
+
+```go
+// 100 is the default. Lower = more frequent GC = lower memory usage
+debug.SetGCPercent(75)
+```
+
+Details: https://go.dev/doc/gc-guide#Memory_limit
+
+</details>
+
+<details>
 <summary>Getting Ghidra to run</summary>
 
 ```bash
