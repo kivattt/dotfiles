@@ -222,6 +222,10 @@ func main() {
 <summary>Tuning the Golang garbage collector</summary>
 
 ```go
+import (
+    "runtime/debug"
+)
+
 // 100 is the default. Lower = more frequent GC = lower memory usage
 debug.SetGCPercent(75)
 ```
