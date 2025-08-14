@@ -221,6 +221,8 @@ func main() {
 <details>
 <summary>Tuning the Golang garbage collector</summary>
 
+Details: https://go.dev/doc/gc-guide#Memory_limit
+
 ```go
 import (
     "runtime/debug"
@@ -231,8 +233,6 @@ func main() {
     debug.SetGCPercent(75)
 }
 ```
-
-Details: https://go.dev/doc/gc-guide#Memory_limit
 
 </details>
 
