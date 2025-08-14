@@ -198,6 +198,24 @@ sudo ./vtune-gui
 </details>
 
 <details>
+<summary>Golang Memory/CPU profiling</summary>
+
+```go
+import (
+    "github.com/kivattt/gogitstatus"
+)
+
+func main() {
+    // Generate a .pprof CPU profile file on program exit
+    defer profile.Start(profile.CPUProfile).Stop()
+
+    // Generate a .pprof memory profile file on program exit
+    defer profile.Start(profile.MemProfile).Stop()
+}
+```
+</details>
+
+<details>
 <summary>Getting Ghidra to run</summary>
 
 ```bash
