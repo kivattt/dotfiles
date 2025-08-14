@@ -225,12 +225,18 @@ Details: https://go.dev/doc/gc-guide#Memory_limit
 
 ```go
 import (
+    "runtime"
     "runtime/debug"
 )
 
 func main() {
     // 100 is the default. Lower = more frequent GC = lower memory usage
     debug.SetGCPercent(75)
+
+    // By the way, we can VERY CRUDELY debug heap memory usage this way.
+    var m runtime.MemStats
+    runtime.ReadMemStats(&m)
+    fmt.Println(m.Alloc)
 }
 ```
 
