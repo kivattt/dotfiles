@@ -211,6 +211,9 @@ func main() {
 
     // Generate a .pprof memory profile file on program exit
     defer profile.Start(profile.MemProfile).Stop()
+
+    // Higher sampling rate for memory profiling
+    defer profile.Start(profile.MemProfileRate(8192)).Stop()
 }
 ```
 </details>
