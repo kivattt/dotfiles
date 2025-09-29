@@ -5,14 +5,15 @@ fen.always_show_info_numbers = true
 fen.scroll_speed = 3
 fen.split_home_end = true
 fen.git_status = true
+fen.pause_on_open_file = false
 
 local video = {"*.mp4", "*.webm", "*.mkv", "*.mov", "*.avi", "*.flv"}
 local audio = {"*.wav", "*.flac", "*.mp3", "*.ogg", "*.m4a"}
 local image = {"*.png", "*.jpg", "*.jpeg", "*.jfif", "*.flif", "*.tiff", "*.gif", "*.webp", "*.bmp"}
-local document = {"*.pdf", "*.epub", "*.docx", "*.doc", "*.odg", "*.fodg", "*.otg"}
+local document = {"*.pdf", "*.epub", "*.docx", "*.doc", "*.odg", "*.fodg", "*.otg", "*.ods"}
 
 fen.open = {
-	{program = {"arw-preview2", "darktable"},  match = {"*.ARW", "*.arw", "*.CR3"}},
+	{program = {"arw-preview", "darktable"},  match = {"*.ARW", "*.arw", "*.CR3"}},
 	{program = {"mpv"},                        match = video},
 	{program = {"mpv --volume=80"},            match = audio},
 	{program = {"xviewer", "xdg-open", "feh"}, match = image},
