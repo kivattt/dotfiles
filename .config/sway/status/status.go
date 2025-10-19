@@ -122,18 +122,31 @@ func batteryText(batteries []*battery.Battery) (string, error) {
 	}
 
 	var builder strings.Builder
-	builder.WriteString("<span foreground=\"#36a4f7\">")
 
+	var minBatteryPercentage float64 = 200 // Percent
 	for _, b := range batteries {
 		if b.Full == 0 {
 			return "", errors.New("No battery")
 		}
 
+		batteryPercentage := b.Current / b.Full * 100
+		minBatteryPercentage = min(minBatteryPercentage, batteryPercentage)
+
 		builder.WriteString(b.State.String())
-		builder.WriteString(" " + strconv.FormatFloat(b.Current/b.Full*100, 'f', 1, 64) + "%")
+		builder.WriteString(" " + strconv.FormatFloat(batteryPercentage, 'f', 1, 64) + "%")
 	}
-	builder.WriteString("</span>")
-	return builder.String(), nil
+
+	header := ""
+	if minBatteryPercentage < 5 { // Red battery warning
+		header = "<span foreground=\"#f7363c\">"
+	} else if minBatteryPercentage < 10 { // Orange battery warning
+		header = "<span foreground=\"#f7c036\">"
+	} else {
+		header = "<span foreground=\"#36a4f7\">"
+	}
+
+	footer := "</span>"
+	return header + builder.String() + footer, nil
 }
 
 type Memory struct {
