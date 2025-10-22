@@ -299,3 +299,30 @@ Mix (terrible, awful, never use this.)
 mix(dst, src, src.a);
 ```
 </details>
+
+<details>
+<summary>Setting up SFML 3 C++ project</summary>
+
+https://www.sfml-dev.org/tutorials/3.0/getting-started/cmake/
+```
+sudo apt update
+sudo apt install \
+    libxrandr-dev \
+    libxcursor-dev \
+    libxi-dev \
+    libudev-dev \
+    libfreetype-dev \
+    libflac-dev \
+    libvorbis-dev \
+    libgl1-mesa-dev \
+    libegl1-mesa-dev \
+    libfreetype-dev
+
+git clone https://github.com/SFML/cmake-sfml-project
+# Rename some stuff, set your project name in CMakeLists.txt
+cmake -B build
+cmake --build build
+
+./build/bin/main
+```
+</details>
