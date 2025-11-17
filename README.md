@@ -326,3 +326,50 @@ cmake --build build
 ./build/bin/main
 ```
 </details>
+
+<details>
+<summary>Getting JUCE to work on Linux</summary>
+
+## Install dependencies (required!!!)
+```
+# Install required dependencies
+# See: https://github.com/juce-framework/JUCE/blob/master/docs/Linux%20Dependencies.md
+
+sudo apt update
+sudo apt install libasound2-dev libjack-jackd2-dev \
+    ladspa-sdk \
+    libcurl4-openssl-dev  \
+    libfreetype-dev libfontconfig1-dev \
+    libx11-dev libxcomposite-dev libxcursor-dev libxext-dev libxinerama-dev libxrandr-dev libxrender-dev \
+    libwebkit2gtk-4.1-dev \
+    libglu1-mesa-dev mesa-common-dev
+```
+
+## Install JUCE
+I don't know if this step is necessary, but do this I guess:
+```
+git clone --depth 1 https://github.com/juce-framework/JUCE.git ~/JUCE
+```
+
+## Download Projucer
+Download the Linux version from [here](https://juce.com/download/) (Linux JUCE and Projucer)
+
+It is important to start a new project _after_ installing the dependencies.\
+If you start a new project in the Projucer before installing dependencies/JUCE, it won't build.
+
+## Building a project
+```
+# After starting a new project (basic plugin), or opening a project, navigate to its folder.
+cd NewProject/Builds/LinuxMakefile/
+# Build the project.
+make
+```
+
+Now that you've built the project, it should have created a `~/.vst3` folder, and put the VST3 plugin in there.\
+You should be able to load the VST3 plugin in REAPER by searching for new plugins, or restarting REAPER.
+
+<img src="juce-plugin.png" width="70%" alt="JUCE hello world plugin running in REAPER"></img>
+
+Since the binaries rely on some libc version, make sure you're using a new enough Linux distro.\
+`Linux Mint 22.1 x86_64` works for me (written November 17th, 2025)
+</details>
