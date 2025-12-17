@@ -373,3 +373,9 @@ You should be able to load the VST3 plugin in REAPER by searching for new plugin
 Since the binaries rely on some libc version, make sure you're using a new enough Linux distro.\
 `Linux Mint 22.1 x86_64` works for me (written November 17th, 2025)
 </details>
+
+<details>
+<summary>My phone alarm sound</summary>
+
+You can find it as "baguette.wav". Yes, it is 40 megabytes idc
+</details>
