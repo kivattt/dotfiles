@@ -20,6 +20,14 @@ That one program I keep forgetting the name of: `sudo apt install binwalk`
 ```
 
 <details>
+<summary>Burning ISO to a USB on Linux mint</summary>
+
+`sudo mintstick -m iso`
+
+It won't show anything in the "USB stick:" selection until you select a .iso file in the "ISO image:" selection.
+</details>
+
+<details>
 <summary>Sway / Wayland shenanigans</summary>
 
 Remember to install:\
