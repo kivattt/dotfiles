@@ -8,7 +8,7 @@ fen.git_status = true
 fen.pause_on_open_file = false
 
 local video = {"*.mp4", "*.webm", "*.mkv", "*.mov", "*.avi", "*.flv"}
-local audio = {"*.wav", "*.flac", "*.mp3", "*.ogg", "*.m4a"}
+local audio = {"*.wav", "*.flac", "*.mp3", "*.ogg", "*.m4a", "*.aif"}
 local image = {"*.png", "*.jpg", "*.jpeg", "*.jfif", "*.flif", "*.tiff", "*.gif", "*.webp", "*.bmp"}
 local document = {"*.pdf", "*.epub", "*.docx", "*.doc", "*.odg", "*.fodg", "*.otg", "*.ods"}
 
