@@ -227,6 +227,26 @@ func main() {
 </details>
 
 <details>
+<summary>Golang goroutine/syscall profiling</summary>
+
+```go
+f, err := os.Create("trace.out")
+if err != nil {
+	panic(err)
+}
+defer f.Close()
+
+// Start tracing
+if err := trace.Start(f); err != nil {
+	panic(err)
+}
+defer trace.Stop()
+```
+
+`go tool trace -http localhost:8080 trace.out`
+</details>
+
+<details>
 <summary>Tuning the Golang garbage collector</summary>
 
 Details: https://go.dev/doc/gc-guide#Memory_limit
