@@ -247,6 +247,17 @@ defer trace.Stop()
 </details>
 
 <details>
+<summary>Golang test coverage HTML report</summary>
+
+Opens the test coverage report in a web browser
+
+```
+go test -coverprofile cover.out
+go tool cover -html cover.out
+```
+</details>
+
+<details>
 <summary>Tuning the Golang garbage collector</summary>
 
 Details: https://go.dev/doc/gc-guide#Memory_limit
