@@ -28,7 +28,7 @@ fen.preview = {
 	{script = c.."markdown.lua",             match = "*.md"},
 	{script = c.."toml.lua",                 match = {"*.toml", "*.lock"}},
 	{script = c.."desktop.lua",              match = "*.desktop"},
-	{script = c.."comments-and-strings.lua", match = {"LICENSE*", "COPYING*"}}
+	{script = c.."comments-and-strings.lua", match = {"LICENSE*", "COPYING*", ".python-version", "*.json", "*.log"}}
 }
 
 local pathSep = "/"
@@ -37,7 +37,7 @@ if fen.runtime_os == "windows" then
 end
 fen.bookmarks = {
 	[1] = fen.home_path .. "Downloads",
-	[2] = fen.home_path .. "Downloads" .. pathSep .. "samples" .. pathSep .. "best_everything",
+	[2] = fen.home_path .. "Downloads" .. pathSep .. "samples" .. pathSep .. "vengeance",
 	[3] = fen.home_path .. "Documents" .. pathSep .. "REAPER Media",
 	[4] = fen.home_path .. ".steam/debian-installation/steamapps/common/Team Fortress 2/tf/cfg",
 	-- TMNF downloaded maps
