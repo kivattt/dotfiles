@@ -18,12 +18,17 @@ input * {
 	repeat_rate 40
 }
 
+#input "type:pointer" {
+#	accel_profile "flat"
+#	pointer_accel 1.0
+#}
+
 input "type:keyboard" xkb_options caps:escape
 
-#output "*" bg wallpapers/fox.jpg fill
-output "*" bg wallpapers/_DSC2480.jpg fill
-output HDMI-A-1 pos 0 0 res 2560x1440@75.002Hz
-output eDP-1 pos 2560 700 res 1920x1080@60.038Hz
+output "*" bg /home/kivah/main/wallpapers/car.jpeg fill
+
+output eDP-1 pos 2560 500 res 1920x1080@60.038hz
+output HDMI-A-1 pos 0 0 res 2560x1440@119.998hz
 
 seat seat0 xcursor_theme Adwaita 10
 
@@ -105,6 +110,7 @@ for_window {
 	[title="Plug-in pin connector"] floating enable
 
 	[title="ui test"] floating enable
+	[title="mysweeper"] floating enable
 	[title="sinc"] floating enable
 	[title="Odin GLFW*"] floating enable
 }
