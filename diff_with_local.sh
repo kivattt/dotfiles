@@ -1,6 +1,6 @@
 for f in $(find . -type f); do
 	noDotSlash=${f#"./"}
-	if [[ "$noDotSlash" =~ ".git" ]] || [[ "$noDotSlash" == "README.md" ]] || [[ "$noDotSlash" == "diff_with_local.sh" ]] || [[ "$noDotSlash" == ".bashrc" ]]; then
+	if [[ "$noDotSlash" =~ ".git" ]] || [[ "$noDotSlash" == "README.md" ]] || [[ "$noDotSlash" == "diff_with_local.sh" ]]; then
 		continue
 	fi
 

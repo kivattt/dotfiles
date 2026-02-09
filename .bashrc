@@ -103,15 +103,29 @@ else
 	echo "./compile.bash"
 fi
 
-#------------------------#
-# Cursed program aliases #
-#------------------------#
-alias krita="~/Downloads/krita-5.2.6-x86_64.appimage"
-alias idea="~/Downloads/idea-IC-243.23654.117/bin/idea"
+#---------------------------------------------------------#
+# Cursed program aliases, remove these on a fresh install #
+#---------------------------------------------------------#
+alias krita="~/Downloads/krita-5.2.11-x86_64.AppImage"
+alias idea="~/Downloads/idea/idea-IC-252.27397.103/bin/idea"
 alias ideaultimate="~/Downloads/idea-IU-242.22855.74/bin/idea"
-alias rider="~/Downloads/JetBrains\\ Rider-2024.2.7/bin/rider"
-#alias audacity="~/Downloads/audacity-linux-3.4.2-x64.AppImage"
+alias rider="/home/kivah/Downloads/rider/JetBrains\ Rider-2025.2.1/bin/rider"
+alias clion="/home/kivah/Downloads/clion-2025.2.1/bin/clion"
 alias discord="~/Downloads/discord/Discord/Discord"
 alias re="~/Downloads/MultiMC/MultiMC"
 alias blender="/home/kivah/Downloads/blender-4.2.1-linux-x64/blender"
-alias onefetch="~/Downloads/onefetch"
+alias rover="/home/kivah/Downloads/rustrover/RustRover-2025.2.1/bin/rustrover"
+alias goland="/home/kivah/Downloads/goland/GoLand-2025.3.1.1/bin/goland"
+alias renderdoc="/home/kivah/Downloads/renderdoc/renderdoc_1.40/bin/qrenderdoc"
+alias godot="/home/kivah/Downloads/godot/Godot_v4.5.1-stable_linux.x86_64"
+alias hytale="flatpak run com.hypixel.HytaleLauncher"
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="$PATH:/home/kivah/Downloads/odin/odin-linux-amd64-nightly+2026-01-04"
+
+alias lol="ssh ggr@172.16.195.61"
+
+alias pycharm="/home/kivah/Downloads/pycharm/pycharm-2025.3.2/bin/pycharm"
+
+alias puredata="flatpak run info.puredata.Pd"
+alias maxmsp="wine \"/home/kivah/.steam/debian-installation/steamapps/compatdata/2691700104/pfx/drive_c/Program Files/Cycling '74/Max 9/Max.exe\""
