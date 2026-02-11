@@ -137,6 +137,16 @@ Log out (Alt+E in i3wm) then back in again, do `go version` to verify it success
 </details>
 
 <details>
+<summary>Profiling with samply</summary>
+
+Installation:\
+https://github.com/mstange/samply
+
+Usage:\
+`samply record <program>`
+</details>
+
+<details>
 <summary>Profiling C/C++/Odin with valgrind + kcachegrind</summary>
 
 ```bash
