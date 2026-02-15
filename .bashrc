@@ -12,6 +12,11 @@ git_branch() {
 	git branch --show-current 2> /dev/null
 }
 
+# $USER isn't set in Termux for whatever reason
+if [ -z $USER ]; then
+	export USER=$(whoami)
+fi
+
 rainbowizepath=~/rainbowize
 if test -x $rainbowizepath/rainbowize; then
 	alias rainbowize="$rainbowizepath/rainbowize"
