@@ -139,6 +139,8 @@ gotoPreview.setup({
 		vim.api.nvim_feedkeys("0", 'n', false) -- Hack to make it always show the window instantly
 		map("n", "<Esc>", -- Escape to close
 			function ()
+				-- FIXME: Silently catch this line on any exception/error
+				-- It annoys me sometimes (it's the one where you press escape and it shows an error msg.)
 				vim.api.nvim_win_close(win, true)
 			end,
 			{buffer = true}
