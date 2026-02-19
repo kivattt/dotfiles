@@ -216,6 +216,15 @@ sudo ./vtune-gui
 </details>
 
 <details>
+<summary>Golang reset fuzz corpus</summary>
+
+```
+rm -r testdata/
+go clean -fuzzcache
+```
+</details>
+
+<details>
 <summary>Golang Memory/CPU profiling</summary>
 
 ```go
