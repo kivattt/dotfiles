@@ -92,6 +92,7 @@ if test -d $tutils2path; then
 	alias ascii="$tutils2path/ascii"
 	alias countchars="$tutils2path/countchars"
 	alias bytes="$tutils2path/bytes"
+	alias dirstats="$tutils2path/dirstats"
 
 	# Overriding the previous ls aliases since tutils2 ls doesn't work with the same arguments
 	alias l="$tutils2path/ls --directories-first --sort-by=modified"
@@ -134,3 +135,5 @@ alias pycharm="/home/kivah/Downloads/pycharm/pycharm-2025.3.2/bin/pycharm"
 
 alias puredata="flatpak run info.puredata.Pd"
 alias maxmsp="wine \"/home/kivah/.steam/debian-installation/steamapps/compatdata/2691700104/pfx/drive_c/Program Files/Cycling '74/Max 9/Max.exe\""
+
+alias nsight="sudo /opt/nvidia/nsight-graphics-for-linux/nsight-graphics-for-linux-2025.5.0.0/host/linux-desktop-nomad-x64/ngfx-ui"
