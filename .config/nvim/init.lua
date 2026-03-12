@@ -139,8 +139,6 @@ gotoPreview.setup({
 		vim.api.nvim_feedkeys("0", 'n', false) -- Hack to make it always show the window instantly
 		map("n", "<Esc>", -- Escape to close
 			function ()
-				-- FIXME: Silently catch this line on any exception/error
-				-- It annoys me sometimes (it's the one where you press escape and it shows an error msg.)
 				vim.api.nvim_win_close(win, true)
 			end,
 			{buffer = true}
@@ -154,7 +152,7 @@ gotoPreview.setup({
 ]]
 local lspconfig = require("lspconfig")
 lspconfig.gopls.setup({})         -- Go
---lspconfig.clangd.setup({})      -- C/C++
+lspconfig.clangd.setup({})      -- C/C++
 lspconfig.ols.setup({})           -- Odin
 lspconfig.ocamllsp.setup({})      -- OCaml
 lspconfig.jdtls.setup({})         -- Java (Requires Java 17+ to be used, tldr: `sudo update-alternatives --config java`)
@@ -173,6 +171,7 @@ local luasnip = require("luasnip")
 local cmp = require("cmp")
 cmp.setup({
 	mapping = {
+		["<F9>"] = cmp.mapping.complete(),
 		["<Enter>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
