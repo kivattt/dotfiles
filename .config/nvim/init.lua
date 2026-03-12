@@ -146,6 +146,15 @@ gotoPreview.setup({
 	end
 })
 
+local function quickfix()
+	vim.lsp.buf.code_action({
+		filter = function(a) return a.isPreferred end,
+		apply = true
+	})
+end
+
+vim.keymap.set("n", "<F9>", quickfix, {noremap=true, silent=true})
+
 
 --[[
 	LSP SETUP
@@ -166,12 +175,13 @@ lspconfig.lua_ls.setup({          -- Lua
 	}
 })
 
+
+
 -- Tab for autocomplete key map
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 cmp.setup({
 	mapping = {
-		["<F9>"] = cmp.mapping.complete(),
 		["<Enter>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
