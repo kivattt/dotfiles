@@ -23,7 +23,7 @@ fen.open = {
 
 local c = fen.config_path
 fen.preview = {
-	{script = c.."gitignore.lua",            match = ".gitignore"},
+	{script = c.."gitignore.lua",            match = {".gitignore", ".gitattributes"}},
 	{script = c.."go.mod.lua",               match = "go.mod"},
 	{script = c.."markdown.lua",             match = "*.md"},
 	{script = c.."toml.lua",                 match = {"*.toml", "*.lock"}},
