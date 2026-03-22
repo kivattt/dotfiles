@@ -28,6 +28,15 @@ It won't show anything in the "USB stick:" selection until you select a .iso fil
 </details>
 
 <details>
+<summary>Tooling for writing C code</summary>
+
+Checking for memory leaks (missing calls to free)
+```
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./program
+```
+</details>
+
+<details>
 <summary>Sway / Wayland shenanigans</summary>
 
 Remember to install:\
