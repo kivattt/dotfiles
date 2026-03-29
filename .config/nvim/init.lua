@@ -159,15 +159,14 @@ vim.keymap.set("n", "<F9>", quickfix, {noremap=true, silent=true})
 --[[
 	LSP SETUP
 ]]
-local lspconfig = require("lspconfig")
-lspconfig.gopls.setup({})         -- Go
-lspconfig.clangd.setup({})      -- C/C++
-lspconfig.ols.setup({})           -- Odin
-lspconfig.ocamllsp.setup({})      -- OCaml
-lspconfig.jdtls.setup({})         -- Java (Requires Java 17+ to be used, tldr: `sudo update-alternatives --config java`)
-lspconfig.rust_analyzer.setup({}) -- Rust
-lspconfig.elp.setup({})           -- Erlang (consumes heaps of memory! and pollutes the /tmp directory!)
-lspconfig.lua_ls.setup({          -- Lua
+vim.lsp.config("gopls", {})         -- Go
+vim.lsp.config("clangd", {})      -- C/C++
+vim.lsp.config("ols", {})           -- Odin
+vim.lsp.config("ocamllsp", {})      -- OCaml
+vim.lsp.config("jdtls", {})         -- Java (Requires Java 17+ to be used, tldr: `sudo update-alternatives --config java`)
+vim.lsp.config("rust_analyzer", {}) -- Rust
+vim.lsp.config("elp", {})           -- Erlang (consumes heaps of memory! and pollutes the /tmp directory!)
+vim.lsp.config("lua_ls", {          -- Lua
 	settings = {
 		Lua = {
 			diagnostics = { globals = { "vim", "fen" } }
