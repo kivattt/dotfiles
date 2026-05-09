@@ -9,6 +9,7 @@ Plug("kivattt/fen.nvim")
 
 Plug("nvim-lua/plenary.nvim") -- Some utility library many Neovim lua plugins use
 Plug("neovim/nvim-lspconfig") -- LSP Support
+Plug("stevearc/aerial.nvim")  -- See list of functions/methods
 -- Autocompletion
 Plug("hrsh7th/nvim-cmp")
 Plug("hrsh7th/cmp-nvim-lsp")
@@ -146,6 +147,20 @@ gotoPreview.setup({
 	end
 })
 
+require("aerial").setup({
+	on_attach = function(bufnr)
+		-- Open Aerial and jump around with Shift+Up, Shift+Down
+		vim.keymap.set("n", "<S-Up>", "<cmd>AerialPrev<CR><cmd>AerialOpen!<CR>", {buffer = bufnr})
+		vim.keymap.set("n", "<S-Down>", "<cmd>AerialNext<CR><cmd>AerialOpen!<CR>", {buffer = bufnr})
+	end,
+	layout = {
+		default_direction = "prefer_left",
+		max_width = {120, 0.6},
+		width = 55,
+	},
+})
+vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>") -- Leader+A to toggle Aerial
+
 local function quickfix()
 	vim.lsp.buf.code_action({
 		filter = function(a) return a.isPreferred end,
@@ -155,18 +170,18 @@ end
 
 vim.keymap.set("n", "<F9>", quickfix, {noremap=true, silent=true})
 
-
 --[[
 	LSP SETUP
 ]]
-lsps = {"gopls", "clangd", "ols", "ocamllsp", "jdtls", "rust_analyzer", "elp"}
-
-for i = 1, #lsps do
-	vim.lsp.config(lsps[i], {})
-	vim.lsp.enable(lsps[i])
-end
-
-vim.lsp.config("lua_ls", {
+local lspconfig = require("lspconfig")
+lspconfig.gopls.setup({})         -- Go
+lspconfig.clangd.setup({})      -- C/C++
+lspconfig.ols.setup({})           -- Odin
+lspconfig.ocamllsp.setup({})      -- OCaml
+--lspconfig.jdtls.setup({})         -- Java (Requires Java 17+ to be used, tldr: `sudo update-alternatives --config java`)
+lspconfig.rust_analyzer.setup({}) -- Rust
+lspconfig.elp.setup({})           -- Erlang (consumes heaps of memory! and pollutes the /tmp directory!)
+lspconfig.lua_ls.setup({          -- Lua
 	settings = {
 		Lua = {
 			diagnostics = { globals = { "vim", "fen" } }
