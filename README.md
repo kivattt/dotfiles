@@ -446,3 +446,29 @@ Since the binaries rely on some libc version, make sure you're using a new enoug
 
 You can find it as "baguette.wav". Yes, it is 40 megabytes idc
 </details>
+
+<details>
+<summary>CLAP: Building clap-saw-demo on Linux</summary>
+```
+sudo apt-get install -y \
+    devscripts \
+    libxcb-cursor-dev \
+    libxcb-keysyms1-dev \
+    libxcb-util-dev \
+    libxkbcommon-dev \
+    libxkbcommon-x11-dev \
+    ninja-build \
+    libcogl-pango-dev \
+    libpangoft2-1.0-0 \
+    libpango-1.0-0 \
+    libgtk-3-dev \
+    libgtkmm-3.0-dev \
+    xcb \
+    libsqlite3-dev \
+    libxcb-xkb-dev \
+    libharfbuzz-dev \
+    libcairo2-dev
+```
+
+fuck you
+</details>
