@@ -448,7 +448,7 @@ You can find it as "baguette.wav". Yes, it is 40 megabytes idc
 </details>
 
 <details>
-<summary>CLAP: Building clap-saw-demo on Linux</summary>
+<summary>CLAP: Building surge-synthesizer/clap-saw-demo on Linux</summary>
 
 ```
 sudo apt-get install -y \
