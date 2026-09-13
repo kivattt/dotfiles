@@ -32,7 +32,7 @@ It won't show anything in the "USB stick:" selection until you select a .iso fil
 
 Checking for memory leaks (missing calls to free)
 ```
-valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./program
+valgrind --leak-check=full --show-leak-kinds=definite,indirect --track-origins=yes ./program
 ```
 </details>
 
