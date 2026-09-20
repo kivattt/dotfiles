@@ -242,7 +242,8 @@ hi('Ignore',           {                                               ctermfg =
 
 -- KIVA section
 hi('String', {fg = '#ffae32'})
-hi('Pmenu',  { fg = "#000000", bg = '#ffffff',   ctermfg = 'Black', ctermbg = 'White', reverse=true })
+--hi('Pmenu',  { fg = "#000000", bg = '#ffffff',   ctermfg = 'Black', ctermbg = 'White', reverse=false })
+hi('Pmenu',  { fg = "#ffffff", bg = '#111114',   ctermfg = 'White', ctermbg = 'White', reverse=false })
 --hi('PmenuSbar',    { bg = 'Black',                       ctermbg = 'Black' })
 --hi('Constant',         { fg = '#ffa0a0',                               ctermfg = 'Magenta' })
 --hi('Constant',         { fg = '#ac2d13',                               ctermfg = 'DarkRed' }) -- KIVA
