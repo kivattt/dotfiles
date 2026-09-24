@@ -522,3 +522,15 @@ if (value > history_peak) {
 float peak = history_peak;
 ```
 </details>
+
+<details>
+<summary>Disassemble named function in ELF executable</summary>
+
+```
+objdump -M intel -S --disassemble=whatever_your_function_is_called your_program.elf
+```
+
+The `-S` flag will show C source code above the instructions.
+
+I prefer Intel syntax over AT&T, so `-M intel` does that
+</details>
