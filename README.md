@@ -526,6 +526,11 @@ float peak = history_peak;
 <details>
 <summary>Disassemble named function in ELF executable</summary>
 
+BEWARE: This doesn't show how the function looks wherever it is inlined.
+It may have different instructions when inlined, and this only shows the no-inline version.
+
+When in doubt, trust the disassembly from Intel VTune.
+
 ```
 objdump -M intel -S --disassemble=whatever_your_function_is_called your_program.elf
 ```
