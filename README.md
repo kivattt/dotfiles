@@ -539,3 +539,24 @@ The `-S` flag will show source code above the instructions.
 
 I prefer Intel syntax over AT&T, so `-M intel` does that
 </details>
+
+<details>
+<summary>Setting up Gitea git server locally</summary>
+
+## Install Gitea
+
+Install the linux amd64 binary from https://about.gitea.com/products/gitea/
+
+Put it in whatever directory you want the server to use and run it.
+
+## Set up MySQL database (gitea hates you)
+```
+sudo apt update && sudo apt upgrade # In for a penny, in for a pound
+sudo apt install mysql-server
+```
+
+Now follow these MySQL instructions (for local database): \
+https://docs.gitea.com/installation/database-prep/
+
+Regarding point 3.: the second "gitea" AFTER "IDENTIFIED" is the password, not the first "gitea".
+</details>
