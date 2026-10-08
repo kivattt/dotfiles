@@ -549,7 +549,9 @@ Install the linux amd64 binary from https://about.gitea.com/products/gitea/
 
 Put it in whatever directory you want the server to use and run it.
 
-## Set up MySQL database (gitea hates you)
+Now try selecting sqlite instead of the default MySQL. Realmy told me it doesn't require the complicated setup process described below.
+
+## Set up MySQL database (try sqlite instead!)
 ```
 sudo apt update && sudo apt upgrade # In for a penny, in for a pound
 sudo apt install mysql-server
