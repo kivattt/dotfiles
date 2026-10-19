@@ -562,3 +562,14 @@ https://docs.gitea.com/installation/database-prep/
 
 Regarding point 3.: the second "gitea" AFTER "IDENTIFIED" is the password, not the first "gitea".
 </details>
+
+<details>
+<summary>Fonts for desktop applications</summary>
+
+Todo:
+[Inter](https://fonts.google.com/specimen/Inter)
+[Lekton](https://fonts.google.com/specimen/Lekton?preview.script=Latn) monospace font
+
+Do not use:
+[Nunito](https://fonts.google.com/specimen/Nunito) looks off and "regular" weight is too thin
+</details>
