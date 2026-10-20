@@ -566,10 +566,29 @@ Regarding point 3.: the second "gitea" AFTER "IDENTIFIED" is the password, not t
 <details>
 <summary>Fonts for desktop applications</summary>
 
-Todo:
-[Inter](https://fonts.google.com/specimen/Inter)
-[Lekton](https://fonts.google.com/specimen/Lekton?preview.script=Latn) monospace font
+My font ranking, in order:
 
-Do not use:
-[Nunito](https://fonts.google.com/specimen/Nunito) looks off and "regular" weight is too thin
+S tier:
+[OpenSans](https://fonts.google.com/specimen/Open+Sans)
+
+A tier:
+[Inter](https://fonts.google.com/specimen/Inter)
+[Roboto](https://fonts.google.com/specimen/Roboto)
+
+The rest:
+[NotoSans](https://fonts.google.com/noto/specimen/Noto+Sans)
+[Lato](https://fonts.google.com/specimen/Lato)
+[Asap Sharp](https://fonts.google.com/specimen/Asap+Sharp)
+[Google Sans](https://fonts.google.com/specimen/Google+Sans)
+[Manrope-Regular](https://fonts.google.com/specimen/Manrope)
+[DMSans](https://fonts.google.com/specimen/DM+Sans)
+[Ubuntu](https://fonts.google.com/specimen/Ubuntu)
+[Rubik](https://fonts.google.com/specimen/Rubik)
+[Raleway-Regular](https://fonts.google.com/specimen/Raleway)
+[PlusJakartaSans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
+[Montserrat-Regular](https://fonts.google.com/specimen/Montserrat)
+[NunitoSans](https://fonts.google.com/specimen/Nunito+Sans)
+[Arimo](https://fonts.google.com/specimen/Arimo)
+[Outfit-Regular](https://fonts.google.com/specimen/Outfit)
+
 </details>
