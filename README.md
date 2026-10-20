@@ -573,6 +573,7 @@ S tier:
 
 A tier:
 [Inter](https://fonts.google.com/specimen/Inter)
+[Figtree-Regular](https://fonts.google.com/specimen/Figtree)
 [Roboto](https://fonts.google.com/specimen/Roboto)
 
 The rest:
