@@ -22,14 +22,27 @@ That one program I keep forgetting the name of: `sudo apt install binwalk`
 <details>
 <summary>Burning ISO to a USB on Linux mint</summary>
 
+Remember: Some USB sticks have been cursed, and do not work for burning.
+
+## Linux .iso
 `sudo mintstick -m iso`
 
 It won't show anything in the "USB stick:" selection until you select a .iso file in the "ISO image:" selection.
 
-If you're burning a Windows .iso file, use Ventoy instead: https://linuxmint-user-guide.readthedocs.io/en/latest/winiso.html
+## Windows 7 .iso
 
-Remember: Some USB sticks have been cursed, and do not work. \
-If it's one of those two Kingston DT50 16GB models that heat up, try the other one. Better yet, try one of the generic 4GB ones.
+For Windows 7 .iso files, use [WoeUSB](https://github.com/WoeUSB/WoeUSB/releases)
+
+```
+# Install dependencies
+sudo apt install wimtools p7zip-full grub-pc-bin parted dosfstools ntfs-3g
+
+# Now insert the USB stick and identify its name, like /dev/sdd
+lsblk
+
+# Run it (replace "/dev/sdd" with the right device you got from lsblk)
+sudo ./woeusb-5.2.4.bash --device Win7_Ult_SP1_English_x64.iso /dev/sdd
+```
 </details>
 
 <details>
