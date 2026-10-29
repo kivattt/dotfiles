@@ -25,6 +25,11 @@ That one program I keep forgetting the name of: `sudo apt install binwalk`
 `sudo mintstick -m iso`
 
 It won't show anything in the "USB stick:" selection until you select a .iso file in the "ISO image:" selection.
+
+If you're burning a Windows .iso file, use Ventoy instead: https://linuxmint-user-guide.readthedocs.io/en/latest/winiso.html
+
+Remember: Some USB sticks have been cursed, and do not work. \
+If it's one of those two Kingston DT50 16GB models that heat up, try the other one. Better yet, try one of the generic 4GB ones.
 </details>
 
 <details>
