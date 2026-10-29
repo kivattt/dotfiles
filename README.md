@@ -43,6 +43,24 @@ lsblk
 # Run it (replace "/dev/sdd" with the right device you got from lsblk)
 sudo ./woeusb-5.2.4.bash --device Win7_Ult_SP1_English_x64.iso /dev/sdd
 ```
+
+When installing from the Win7 USB, it may fail with "Windows cannot be installed to ... Partition (Show details)" \
+In this case, press Shift + F10 and run this:
+```
+diskpart
+list disk
+
+# Now identify the harddrive (probably disk 0) and run:
+select disk 0
+clean
+convert mbr
+exit
+exit
+```
+
+Now click the "refresh" button.
+The disk should now work for installing Windows 7.
+
 </details>
 
 <details>
