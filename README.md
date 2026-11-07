@@ -578,3 +578,10 @@ The rest:
 - [Outfit-Regular](https://fonts.google.com/specimen/Outfit)
 
 </details>
+
+<details>
+<summary>Project ideas</summary>
+
+- Space-fitting curve visualization of binary data
+
+</details>
