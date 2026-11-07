@@ -509,57 +509,6 @@ sudo apt-get install -y \
 </details>
 
 <details>
-<summary>MAX() value of ringbuffer without extra for-loop (peak detection)</summary>
-
-Instead of
-```c
-history[index] = value;
-index = (index + 1) % length;
-
-float peak = 0.0F;
-for (int i = 0; i < length; i++) {
-    peak = MAX(peak, history[i]);
-}
-```
-
-You can write
-```c
-// State variables:
-float history_peak;
-int history_peak_counter;
-float history_peak_after;
-int history_peak_after_counter;
-
-
-history[index] = value;
-index = (index + 1) % length;
-
-if (value > history_peak) {
-    history_peak_counter = 0;
-    history_peak = value;
-    history_peak_after = 0.0F;
-} else {
-    history_peak_counter += 1;
-
-    if (value > history_peak_after) {
-        history_peak_after = value;
-        history_peak_after_counter = 0;
-    } else {
-        history_peak_after_counter += 1;
-    }
-
-    if (history_peak_counter > length) {
-        history_peak_counter = history_peak_after_counter;
-        history_peak = history_peak_after;
-        history_peak_after = 0.0F;
-    }
-}
-
-float peak = history_peak;
-```
-</details>
-
-<details>
 <summary>Disassemble named function in ELF executable</summary>
 
 BEWARE: This doesn't show how the function looks wherever it is inlined.
