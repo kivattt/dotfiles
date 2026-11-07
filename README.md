@@ -582,6 +582,7 @@ The rest:
 <details>
 <summary>Project ideas</summary>
 
+- Learn about how spice simulation can be implemented
 - Space-fitting curve visualization of binary data
 
 </details>
